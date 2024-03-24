@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://h5hcnlrdvgmn" path="res://imgs/obstacles/obstacle_1.png" id="2_6uj0a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8w6i"]
-size = Vector2(28, 28)
+size = Vector2(24, 21)
 
 [node name="sign_obstacle" instance=ExtResource("1_t85h3")]
 
@@ -16,4 +16,5 @@ texture = ExtResource("2_6uj0a")
 actor = NodePath("..")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_s8w6i")
