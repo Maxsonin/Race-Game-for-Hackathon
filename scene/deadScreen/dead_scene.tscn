@@ -1,3 +1,50 @@
-[gd_scene format=3 uid="uid://cgmoq5r0iaxr6"]
+[gd_scene load_steps=3 format=3 uid="uid://cgmoq5r0iaxr6"]
+
+[sub_resource type="GDScript" id="GDScript_500kx"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	text=\"Max score \"+str(int(Global.Maxscore))
+	
+	pass
+"
+
+[sub_resource type="GDScript" id="GDScript_rro1a"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	text= \"Score \"+str(int(Global.point))
+	pass
+"
 
 [node name="DeadScene" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 111.0
+offset_bottom = 43.0
+text = "Max Score"
+script = SubResource("GDScript_500kx")
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 2.0
+offset_top = 25.0
+offset_right = 79.0
+offset_bottom = 48.0
+text = "Score"
+script = SubResource("GDScript_rro1a")

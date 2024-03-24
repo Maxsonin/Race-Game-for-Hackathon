@@ -1,5 +1,5 @@
 extends Node2D
-var point = 0
+
 var can_move = true
 
 @onready var car_hitbox: Area2D = $CarHitbox
@@ -12,7 +12,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	point+=30*delta
+	Global.point+=30*delta
 
 
 func _on_car_hitbox_car_got_hit() -> void:
