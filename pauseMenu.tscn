@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpt2foh0u5av1"]
+[gd_scene load_steps=4 format=3 uid="uid://bi8ir6lxla51p"]
 
 [ext_resource type="FontFile" uid="uid://chflfac1g7d6v" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="1_b4ko6"]
 [ext_resource type="Texture2D" uid="uid://bn5wedmcrc878" path="res://imgs/buttons/continue.png" id="2_w6rnb"]
