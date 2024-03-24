@@ -48,7 +48,7 @@ func _process(delta):
 			target_rotation = 0
 			target_position_x = car.position.x  # You may need to adjust this depending on your game logic
 			move_speed = (VALUE_NEEDED_TO_CHANGE_ROAD / TIME_NEEDED_TO_CHANGE_ROAD)  # Reset move speed as well
-
+			corig()
 
 func pauseManu():
 	if paused:
@@ -71,3 +71,13 @@ func _on_car_car_got_hit_fr() -> void:
 
 func _on_scene_trasition_transitioned() -> void:
 	get_tree().change_scene_to_file("res://scene/deadScreen/dead_scene.tscn")
+
+func corig():
+	if car.position.x>133 and car.position.x>113:
+		car.position.x=133
+	if (car.position.x>27 and car.position.x<=57):
+		car.position.x=32
+	if (car.position.x>57 and car.position.x<=80):
+		car.position.x=63
+	if (car.position.x>80 and car.position.x<=113):
+		car.position.x=96
