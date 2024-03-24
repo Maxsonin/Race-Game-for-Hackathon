@@ -20,7 +20,7 @@ func _process(delta):
 		move_speed = (VALUE_NEEDED_TO_CHANGE_ROAD / TIME_NEEDED_TO_CHANGE_ROAD)
 		target_rotation = 15
 		rotate_speed = (15 / TIME_NEEDED_TO_CHANGE_ROAD)
-	elif Input.is_action_just_pressed("MoveLeft") and car.position.x > 32:
+	elif Input.is_action_just_pressed("MoveLeft") and car.position.x > 62:
 		target_position_x = car.position.x - VALUE_NEEDED_TO_CHANGE_ROAD
 		move_speed = (VALUE_NEEDED_TO_CHANGE_ROAD / TIME_NEEDED_TO_CHANGE_ROAD)
 		target_rotation = -15

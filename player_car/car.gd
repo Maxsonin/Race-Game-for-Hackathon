@@ -10,8 +10,3 @@ func _ready():
 func _process(delta):
 	pass
 
-func _on_body_entered(body):
-	print("Collision detected")
-	if body.has_method("get_name"):
-		var body_name = body.get_name()
-		print("Collided with:", body_name)
