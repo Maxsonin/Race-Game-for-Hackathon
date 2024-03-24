@@ -11,13 +11,10 @@ func _ready():
 	area_entered.connect(_on_body_entered)
 
 func _on_body_entered(body: Area2D):
-	print("Collision detected")
 	if body.has_method("get_name"):
 		var body_name = body.get_name()
-		print("Collided with:", body_name)
 		if body.get_parent().has_node("MoveComponent"):
 			move_component.speed = body.get_parent().get_node("MoveComponent").speed
-			print(body.get_parent().get_node("MoveComponent").speed)
 		else:
 			move_component.speed = body.get_parent().get_node("SignMoveComponent")._speed
 		car_got_hit.emit()

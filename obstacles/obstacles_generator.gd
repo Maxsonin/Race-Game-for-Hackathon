@@ -23,7 +23,6 @@ func _process(delta):
 	if int(Global.point) > 0 and int(Global.point) <= 1500 and int(Global.point) % 300 == 0:
 		car_obst_timer.wait_time /= 1.4
 		Global.point+=1
-		print("update")
 		sign_obst_timer.wait_time /= 1.4
 
 
