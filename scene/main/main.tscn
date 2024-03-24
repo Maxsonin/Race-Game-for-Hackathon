@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://psf0b7wkagio"]
+[gd_scene load_steps=13 format=3 uid="uid://psf0b7wkagio"]
 
 [ext_resource type="PackedScene" uid="uid://csg7h2gw70il0" path="res://player_car/car.tscn" id="1_4gxa1"]
 [ext_resource type="Script" path="res://scene/main/main.gd" id="1_eq3eq"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scene/mainMenu/playTSB.gd" id="5_15ypm"]
 [ext_resource type="PackedScene" uid="uid://dbermyk47ak70" path="res://obstacles/obstacles_generator.tscn" id="6_s2b05"]
 [ext_resource type="FontFile" uid="uid://chflfac1g7d6v" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="7_c0mvp"]
+[ext_resource type="PackedScene" uid="uid://c6omje6eu138a" path="res://scene/transition/scene_trasition.tscn" id="9_itvyu"]
 [ext_resource type="PackedScene" uid="uid://cpt2foh0u5av1" path="res://scene/pause/pauseMenu.tscn" id="9_mlxa2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uowd2"]
@@ -87,4 +88,7 @@ action = "MoveLeft"
 unique_name_in_owner = true
 visible = false
 
+[node name="SceneTrasition" parent="." instance=ExtResource("9_itvyu")]
+
 [connection signal="car_got_hit_fr" from="Car" to="." method="_on_car_car_got_hit_fr"]
+[connection signal="transitioned" from="SceneTrasition" to="." method="_on_scene_trasition_transitioned"]

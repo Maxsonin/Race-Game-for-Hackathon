@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgmoq5r0iaxr6"]
+[gd_scene load_steps=10 format=3 uid="uid://cgmoq5r0iaxr6"]
 
 [ext_resource type="Texture2D" uid="uid://buo7or58amyal" path="res://imgs/background/endSceenBackground.jpg" id="1_6f7j8"]
 [ext_resource type="FontFile" uid="uid://chflfac1g7d6v" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="2_upgie"]
 [ext_resource type="Texture2D" uid="uid://cwtmx567xmya3" path="res://imgs/buttons/retryButton.png" id="3_f30dc"]
 [ext_resource type="Script" path="res://scene/deadScreen/Controls.gd" id="3_oai6v"]
 [ext_resource type="Texture2D" uid="uid://4lpbyw3pl18q" path="res://imgs/buttons/toMenuButton.png" id="4_damf6"]
+[ext_resource type="PackedScene" uid="uid://c6omje6eu138a" path="res://scene/transition/scene_trasition.tscn" id="6_mc4fg"]
 
 [sub_resource type="GDScript" id="GDScript_500kx"]
 script/source = "extends Label
@@ -100,5 +101,8 @@ texture_normal = ExtResource("4_damf6")
 texture_pressed = ExtResource("4_damf6")
 shape = SubResource("RectangleShape2D_x74cr")
 
+[node name="SceneTrasition" parent="." instance=ExtResource("6_mc4fg")]
+
 [connection signal="pressed" from="Controls/retryTSB" to="Controls" method="_on_retry_tsb_pressed"]
 [connection signal="pressed" from="Controls/menuTSB" to="Controls" method="_on_menu_tsb_pressed"]
+[connection signal="transitioned" from="SceneTrasition" to="Controls" method="_on_scene_trasition_transitioned"]

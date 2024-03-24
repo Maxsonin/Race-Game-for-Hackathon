@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://buoepdxuniwqa"]
+[gd_scene load_steps=25 format=3 uid="uid://buoepdxuniwqa"]
 
 [ext_resource type="AudioStream" uid="uid://dr8douv8elwc7" path="res://music/MainManuMusic.mp3" id="1_m4uie"]
 [ext_resource type="Texture2D" uid="uid://bi3iyfftn310e" path="res://imgs/background/mainMenuBackground/frames/01.png" id="1_usb5h"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://c5ap01h7odkob" path="res://imgs/buttons/quiteButtons/quiteButtonActive.png" id="18_aal5o"]
 [ext_resource type="AudioStream" uid="uid://cucr5qsir3vrk" path="res://sounds/engineStartSound.mp3" id="19_5xn67"]
 [ext_resource type="FontFile" uid="uid://chflfac1g7d6v" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="19_wbavf"]
+[ext_resource type="PackedScene" uid="uid://c6omje6eu138a" path="res://scene/transition/scene_trasition.tscn" id="22_0b3mj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bow8m"]
 animations = [{
@@ -135,5 +136,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 max_lines_visible = 3
 
+[node name="SceneTrasition" parent="." instance=ExtResource("22_0b3mj")]
+
 [connection signal="pressed" from="Controls/quiteTSB" to="Controls" method="_on_quite_tsb_pressed"]
 [connection signal="pressed" from="Controls/playTSB" to="Controls" method="_on_play_tsb_pressed"]
+[connection signal="transitioned" from="SceneTrasition" to="Controls" method="_on_scene_trasition_transitioned"]
