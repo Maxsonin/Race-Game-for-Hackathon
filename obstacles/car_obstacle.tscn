@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://cfeb1uffw13xb" path="res://obstacles/obstacle_base.tscn" id="1_djyy2"]
 [ext_resource type="Texture2D" uid="uid://bwt8tv8nv7pdt" path="res://imgs/cars/car_2.png" id="2_5rsm5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfmmp"]
-size = Vector2(26, 56)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y4cwl"]
+height = 52.0
 
 [node name="CarObstacle" instance=ExtResource("1_djyy2")]
 
@@ -17,4 +17,4 @@ texture = ExtResource("2_5rsm5")
 actor = NodePath("..")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-shape = SubResource("RectangleShape2D_dfmmp")
+shape = SubResource("CapsuleShape2D_y4cwl")
