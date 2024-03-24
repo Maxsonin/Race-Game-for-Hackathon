@@ -2,6 +2,8 @@ extends Area2D
 
 @onready var move_component: MoveComponent = $"../MoveComponent"
 
+@onready var crash_sound = %crashSound
+
 signal car_got_hit()
 
 # Called when the node enters the scene tree for the first time.
@@ -13,6 +15,8 @@ func _ready():
 func _on_body_entered(body: Area2D):
 	if body.has_method("get_name"):
 		var body_name = body.get_name()
+		print("Collided with:", body_name)
+		crash_sound.play()
 		if body.get_parent().has_node("MoveComponent"):
 			move_component.speed = body.get_parent().get_node("MoveComponent").speed
 		else:

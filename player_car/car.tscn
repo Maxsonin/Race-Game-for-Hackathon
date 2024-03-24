@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://csg7h2gw70il0"]
+[gd_scene load_steps=7 format=3 uid="uid://csg7h2gw70il0"]
 
 [ext_resource type="Script" path="res://player_car/car.gd" id="1_mfxfi"]
 [ext_resource type="Texture2D" uid="uid://nseka07osejs" path="res://imgs/cars/car_1.png" id="1_ujtvj"]
 [ext_resource type="Script" path="res://player_car/CarHitbox.gd" id="2_sd4jm"]
 [ext_resource type="Script" path="res://components/move_component.gd" id="3_wdsns"]
+[ext_resource type="AudioStream" uid="uid://bxn8n50rbf3q0" path="res://sounds/crashSound.mp3" id="5_xuwir"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fn4jq"]
 height = 47.0
@@ -25,6 +26,11 @@ shape = SubResource("CapsuleShape2D_fn4jq")
 [node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
 script = ExtResource("3_wdsns")
 actor = NodePath("..")
+
+[node name="crashSound" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_xuwir")
+volume_db = -21.989
 
 [connection signal="body_entered" from="CarHitbox" to="CarHitbox" method="_on_body_entered"]
 [connection signal="car_got_hit" from="CarHitbox" to="." method="_on_car_hitbox_car_got_hit"]

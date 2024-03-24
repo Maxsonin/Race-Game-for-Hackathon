@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://psf0b7wkagio"]
+[gd_scene load_steps=15 format=3 uid="uid://psf0b7wkagio"]
 
 [ext_resource type="PackedScene" uid="uid://csg7h2gw70il0" path="res://player_car/car.tscn" id="1_4gxa1"]
 [ext_resource type="Script" path="res://scene/main/main.gd" id="1_eq3eq"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c6omje6eu138a" path="res://scene/transition/scene_trasition.tscn" id="9_itvyu"]
 [ext_resource type="PackedScene" uid="uid://cpt2foh0u5av1" path="res://scene/pause/pauseMenu.tscn" id="9_mlxa2"]
 [ext_resource type="AudioStream" uid="uid://duyq2ojhrwo2g" path="res://sounds/engineSound.mp3" id="10_q6aej"]
+[ext_resource type="AudioStream" uid="uid://dr8douv8elwc7" path="res://music/MainManuMusic.mp3" id="11_colw1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uowd2"]
 size = Vector2(165, 165)
@@ -90,6 +91,17 @@ unique_name_in_owner = true
 visible = false
 
 [node name="SceneTrasition" parent="." instance=ExtResource("9_itvyu")]
+
+[node name="engineSound" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("10_q6aej")
+volume_db = -25.852
+autoplay = true
+
+[node name="mainMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_colw1")
+volume_db = -5.025
+autoplay = true
 
 [connection signal="car_got_hit_fr" from="Car" to="." method="_on_car_car_got_hit_fr"]
 [connection signal="transitioned" from="SceneTrasition" to="." method="_on_scene_trasition_transitioned"]
