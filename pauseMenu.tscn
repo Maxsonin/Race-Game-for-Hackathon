@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpt2foh0u5av1"]
+
+[ext_resource type="FontFile" uid="uid://chflfac1g7d6v" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="1_b4ko6"]
+[ext_resource type="Texture2D" uid="uid://bn5wedmcrc878" path="res://imgs/buttons/continue.png" id="2_w6rnb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhb15"]
+size = Vector2(450, 174)
+
+[node name="PauseMenu" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 160.0
+offset_bottom = 240.0
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Panel"]
+texture_filter = 5
+texture_repeat = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 52.0
+offset_right = 80.0
+offset_bottom = 81.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_b4ko6")
+theme_override_font_sizes/font_size = 30
+text = "PAUSE
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel"]
+texture_filter = 1
+position = Vector2(39, 84)
+scale = Vector2(0.185, 0.185)
+texture_normal = ExtResource("2_w6rnb")
+texture_pressed = ExtResource("2_w6rnb")
+shape = SubResource("RectangleShape2D_fhb15")
+action = "Pause"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Panel"]

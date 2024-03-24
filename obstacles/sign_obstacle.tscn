@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://di42gx55ot2rl"]
+
+[ext_resource type="PackedScene" uid="uid://cfeb1uffw13xb" path="res://obstacles/obstacle_base.tscn" id="1_t85h3"]
+[ext_resource type="Texture2D" uid="uid://h5hcnlrdvgmn" path="res://imgs/obstacles/obstacle_1.png" id="2_6uj0a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8w6i"]
+size = Vector2(28, 28)
+
+[node name="sign_obstacle" instance=ExtResource("1_t85h3")]
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("2_6uj0a")
+
+[node name="MoveComponent" parent="." index="1" node_paths=PackedStringArray("actor")]
+actor = NodePath("..")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_s8w6i")

@@ -1,3 +1,69 @@
-[gd_scene format=3 uid="uid://psf0b7wkagio"]
+[gd_scene load_steps=11 format=3 uid="uid://psf0b7wkagio"]
 
-[node name="Node" type="Node"]
+[ext_resource type="PackedScene" uid="uid://csg7h2gw70il0" path="res://player_car/car.tscn" id="1_4gxa1"]
+[ext_resource type="Script" path="res://main.gd" id="1_eq3eq"]
+[ext_resource type="PackedScene" uid="uid://wdk54g4eoif" path="res://road/road.tscn" id="2_i6rvc"]
+[ext_resource type="PackedScene" uid="uid://c7ecwvcki3wrx" path="res://obstacles/car_obstacle.tscn" id="4_lc55x"]
+[ext_resource type="Script" path="res://player_car/car.gd" id="5_8x4oh"]
+[ext_resource type="PackedScene" uid="uid://di42gx55ot2rl" path="res://obstacles/sign_obstacle.tscn" id="5_blijo"]
+[ext_resource type="Texture2D" uid="uid://cofacbm5grmy6" path="res://imgs/buttons/pause.png" id="7_2qo1l"]
+[ext_resource type="Script" path="res://PauseTSB.gd" id="8_jwny4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqm6q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uowd2"]
+size = Vector2(165, 165)
+
+[node name="GameScene" type="Node"]
+script = ExtResource("1_eq3eq")
+
+[node name="Obstacles" type="Node" parent="."]
+
+[node name="CarObstacle" parent="Obstacles" instance=ExtResource("4_lc55x")]
+position = Vector2(31, 32)
+
+[node name="CarObstacle2" parent="Obstacles" instance=ExtResource("4_lc55x")]
+position = Vector2(97, 98)
+
+[node name="sign_obstacle" parent="Obstacles" instance=ExtResource("5_blijo")]
+position = Vector2(128, 32)
+
+[node name="sign_obstacle2" parent="Obstacles" instance=ExtResource("5_blijo")]
+position = Vector2(32, 112)
+
+[node name="Car" parent="." instance=ExtResource("1_4gxa1")]
+unique_name_in_owner = true
+position = Vector2(96, 199)
+script = ExtResource("5_8x4oh")
+
+[node name="Road" parent="." instance=ExtResource("2_i6rvc")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="ToRightTSB" type="TouchScreenButton" parent="Control"]
+position = Vector2(120, 120)
+scale = Vector2(4, 12)
+shape = SubResource("RectangleShape2D_hqm6q")
+action = "MoveRight"
+
+[node name="ToLeftTSB" type="TouchScreenButton" parent="Control"]
+position = Vector2(40, 120)
+scale = Vector2(4, 12)
+shape = SubResource("RectangleShape2D_hqm6q")
+action = "MoveLeft"
+
+[node name="PauseTSB" type="TouchScreenButton" parent="Control"]
+position = Vector2(4, 4)
+scale = Vector2(0.138, 0.138)
+texture_normal = ExtResource("7_2qo1l")
+texture_pressed = ExtResource("7_2qo1l")
+shape = SubResource("RectangleShape2D_uowd2")
+action = "Pause"
+script = ExtResource("8_jwny4")

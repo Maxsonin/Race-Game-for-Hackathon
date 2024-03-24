@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://csg7h2gw70il0"]
+
+[ext_resource type="Texture2D" uid="uid://nseka07osejs" path="res://imgs/cars/car_1.png" id="1_ujtvj"]
+[ext_resource type="Script" path="res://player_car/CarHitbox.gd" id="2_sd4jm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45nhe"]
+size = Vector2(26, 56)
+
+[node name="Car" type="Node2D"]
+
+[node name="CarHitbox" type="Area2D" parent="."]
+script = ExtResource("2_sd4jm")
+
+[node name="Sprite2D" type="Sprite2D" parent="CarHitbox"]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_ujtvj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarHitbox"]
+shape = SubResource("RectangleShape2D_45nhe")
+
+[connection signal="body_entered" from="CarHitbox" to="CarHitbox" method="_on_body_entered"]
