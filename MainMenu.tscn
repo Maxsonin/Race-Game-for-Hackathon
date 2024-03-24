@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://camtw01co555i"]
-
-[node name="MainMenu" type="Node2D"]
-
-[node name="Panel" type="Panel" parent="."]
-offset_right = 160.0
-offset_bottom = 240.0
