@@ -7,10 +7,10 @@
 [ext_resource type="Script" path="res://scene/mainMenu/playTSB.gd" id="5_15ypm"]
 [ext_resource type="PackedScene" uid="uid://dbermyk47ak70" path="res://obstacles/obstacles_generator.tscn" id="6_s2b05"]
 [ext_resource type="FontFile" uid="uid://chflfac1g7d6v" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="7_c0mvp"]
+[ext_resource type="AudioStream" uid="uid://dt2n4dcjggmsh" path="res://music/mainGameMusic.mp3" id="9_a6ld3"]
 [ext_resource type="PackedScene" uid="uid://c6omje6eu138a" path="res://scene/transition/scene_trasition.tscn" id="9_itvyu"]
 [ext_resource type="PackedScene" uid="uid://cpt2foh0u5av1" path="res://scene/pause/pauseMenu.tscn" id="9_mlxa2"]
 [ext_resource type="AudioStream" uid="uid://duyq2ojhrwo2g" path="res://sounds/engineSound.mp3" id="10_q6aej"]
-[ext_resource type="AudioStream" uid="uid://dr8douv8elwc7" path="res://music/MainManuMusic.mp3" id="11_colw1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uowd2"]
 size = Vector2(165, 165)
@@ -99,8 +99,8 @@ volume_db = -25.852
 autoplay = true
 
 [node name="mainMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("11_colw1")
-volume_db = -5.025
+stream = ExtResource("9_a6ld3")
+volume_db = -17.505
 autoplay = true
 
 [connection signal="car_got_hit_fr" from="Car" to="." method="_on_car_car_got_hit_fr"]
