@@ -4,6 +4,7 @@ extends Node
 
 @onready var car = $Car
 @onready var pause_menu = %PauseMenu
+@onready var scene_trasition: CanvasLayer = $SceneTrasition
 
 var paused = false
 
@@ -16,17 +17,9 @@ var target_rotation: float = 0
 var move_speed: float = 0
 var rotate_speed: float = 0
 
-var dead_wait = false
 
 func _ready():
 	pass
-
-
-func wait_and_die():
-	if not dead_wait:
-		await get_tree().create_timer(1).timeout
-		dead_wait = true
-	get_tree().change_scene_to_file("res://scene/deadScreen/dead_scene.tscn")
 
 
 func _process(delta):
@@ -56,6 +49,7 @@ func _process(delta):
 			target_position_x = car.position.x  # You may need to adjust this depending on your game logic
 			move_speed = (VALUE_NEEDED_TO_CHANGE_ROAD / TIME_NEEDED_TO_CHANGE_ROAD)  # Reset move speed as well
 
+
 func pauseManu():
 	if paused:
 		pause_menu.hide()
@@ -71,4 +65,9 @@ func pauseManu():
 
 func _on_car_car_got_hit_fr() -> void:
 	await get_tree().create_timer(1).timeout
+	scene_trasition.transition()
+	#get_tree().change_scene_to_file("res://scene/deadScreen/dead_scene.tscn")
+
+
+func _on_scene_trasition_transitioned() -> void:
 	get_tree().change_scene_to_file("res://scene/deadScreen/dead_scene.tscn")
