@@ -13,7 +13,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	Global.point+=30*delta
+	if can_move:
+		Global.point+=30*delta
 
 
 func _on_car_hitbox_car_got_hit() -> void:
