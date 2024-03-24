@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://di42gx55ot2rl"]
+[gd_scene load_steps=5 format=3 uid="uid://di42gx55ot2rl"]
 
 [ext_resource type="PackedScene" uid="uid://cfeb1uffw13xb" path="res://obstacles/obstacle_base.tscn" id="1_t85h3"]
 [ext_resource type="Texture2D" uid="uid://h5hcnlrdvgmn" path="res://imgs/obstacles/obstacle_1.png" id="2_6uj0a"]
+[ext_resource type="Script" path="res://obstacles/SignMoveComponent.gd" id="3_tv15r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8w6i"]
 size = Vector2(24, 21)
@@ -12,9 +13,10 @@ size = Vector2(24, 21)
 scale = Vector2(0.03, 0.03)
 texture = ExtResource("2_6uj0a")
 
-[node name="MoveComponent" parent="." index="1" node_paths=PackedStringArray("actor")]
-actor = NodePath("..")
-
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_s8w6i")
+
+[node name="SignMoveComponent" type="Node" parent="." index="2" node_paths=PackedStringArray("actor")]
+script = ExtResource("3_tv15r")
+actor = NodePath("..")
