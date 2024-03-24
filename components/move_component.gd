@@ -4,9 +4,9 @@ extends Node
 @export var actor: Node2D
 
 var elapsedTime = 0.0
-const INITIAL_SPEED = 80.0
-const SPEED_INCREASE_RATE = 0.5
-const MAX_SPEED = 400.0
+const INITIAL_SPEED = 100.0
+const SPEED_INCREASE_RATE = 10
+const MAX_SPEED = 2000.0
 var speed = INITIAL_SPEED
 var reachedMaxSpeed = false
 

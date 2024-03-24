@@ -31,17 +31,13 @@ func _process(delta):
 	if Input.is_action_just_pressed("Pause"):
 		pauseManu()
 	elif Input.is_action_just_pressed("MoveRight") and car.position.x < 120:
-		if not car.can_move:
-			wait_and_die()
-			return
+		if not car.can_move: return
 		target_position_x = car.position.x + VALUE_NEEDED_TO_CHANGE_ROAD
 		move_speed = (VALUE_NEEDED_TO_CHANGE_ROAD / TIME_NEEDED_TO_CHANGE_ROAD)
 		target_rotation = 15
 		rotate_speed = (15 / TIME_NEEDED_TO_CHANGE_ROAD)
 	elif Input.is_action_just_pressed("MoveLeft") and car.position.x > 62:
-		if not car.can_move:
-			wait_and_die()
-			return
+		if not car.can_move: return
 		target_position_x = car.position.x - VALUE_NEEDED_TO_CHANGE_ROAD
 		move_speed = (VALUE_NEEDED_TO_CHANGE_ROAD / TIME_NEEDED_TO_CHANGE_ROAD)
 		target_rotation = -15
@@ -67,3 +63,8 @@ func pauseManu():
 		Engine.time_scale = 0
 	
 	paused = !paused
+
+
+func _on_car_car_got_hit_fr() -> void:
+	await get_tree().create_timer(1).timeout
+	get_tree().change_scene_to_file("res://scene/deadScreen/dead_scene.tscn")
