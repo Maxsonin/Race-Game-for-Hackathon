@@ -1,5 +1,7 @@
 extends Node
 
+@onready var engine_sound = %engineSound
+
 @onready var car = $Car
 @onready var pause_menu = %PauseMenu
 
@@ -58,9 +60,11 @@ func pauseManu():
 	if paused:
 		pause_menu.hide()
 		Engine.time_scale = 1
+		engine_sound.play()
 	else:
 		pause_menu.show()
 		Engine.time_scale = 0
+		engine_sound.stop()
 	
 	paused = !paused
 
