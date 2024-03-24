@@ -4,6 +4,7 @@ var can_move = true
 
 @onready var car_hitbox: Area2D = $CarHitbox
 
+signal car_got_hit_fr()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,3 +18,4 @@ func _process(delta):
 
 func _on_car_hitbox_car_got_hit() -> void:
 	can_move = false
+	car_got_hit_fr.emit()

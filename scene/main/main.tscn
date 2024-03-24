@@ -85,3 +85,5 @@ action = "MoveLeft"
 [node name="PauseMenu" parent="." instance=ExtResource("9_mlxa2")]
 unique_name_in_owner = true
 visible = false
+
+[connection signal="car_got_hit_fr" from="Car" to="." method="_on_car_car_got_hit_fr"]
