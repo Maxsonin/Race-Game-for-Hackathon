@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://player_car/car.gd" id="5_8x4oh"]
 [ext_resource type="Texture2D" uid="uid://cofacbm5grmy6" path="res://imgs/buttons/pause.png" id="7_2qo1l"]
 [ext_resource type="Script" path="res://PauseTSB.gd" id="8_jwny4"]
-[ext_resource type="PackedScene" uid="uid://dbermyk47ak70" path="res://obstacles/obstacles_generator.tscn" id="9_5dyrf"]
+[ext_resource type="PackedScene" uid="uid://bcxvx7hgwthn3" path="res://obstacles/obstacles_generator.tscn" id="9_5dyrf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqm6q"]
 
