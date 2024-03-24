@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://csg7h2gw70il0" path="res://player_car/car.tscn" id="1_4gxa1"]
 [ext_resource type="Script" path="res://scene/main/main.gd" id="1_eq3eq"]
 [ext_resource type="PackedScene" uid="uid://wdk54g4eoif" path="res://road/road.tscn" id="2_i6rvc"]
+[ext_resource type="Texture2D" uid="uid://dtcn3dnqkc6vq" path="res://imgs/buttons/pause_button2.png" id="4_e4o0r"]
 [ext_resource type="Script" path="res://scene/mainMenu/playTSB.gd" id="5_15ypm"]
 [ext_resource type="PackedScene" uid="uid://dbermyk47ak70" path="res://obstacles/obstacles_generator.tscn" id="6_s2b05"]
-[ext_resource type="Texture2D" uid="uid://cofacbm5grmy6" path="res://imgs/buttons/pause.png" id="7_2qo1l"]
 [ext_resource type="FontFile" uid="uid://chflfac1g7d6v" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="7_c0mvp"]
 [ext_resource type="PackedScene" uid="uid://cpt2foh0u5av1" path="res://scene/pause/pauseMenu.tscn" id="9_mlxa2"]
 
@@ -37,10 +37,11 @@ position = Vector2(96, 199)
 [node name="Road" parent="." instance=ExtResource("2_i6rvc")]
 
 [node name="PauseTSB" type="TouchScreenButton" parent="."]
+z_index = 2
 position = Vector2(4, 4)
 scale = Vector2(0.138, 0.138)
-texture_normal = ExtResource("7_2qo1l")
-texture_pressed = ExtResource("7_2qo1l")
+texture_normal = ExtResource("4_e4o0r")
+texture_pressed = ExtResource("4_e4o0r")
 shape = SubResource("RectangleShape2D_uowd2")
 action = "Pause"
 script = ExtResource("5_15ypm")
