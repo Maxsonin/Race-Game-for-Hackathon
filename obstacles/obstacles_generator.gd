@@ -6,6 +6,8 @@ extends Node2D
 var screen_width = ProjectSettings.get_setting("display/window/size/viewport_width")
 var margine = 8
 var spawn_points = [35, 65, 95, 125]
+var prev_picked_by_random = 0
+var boo = 0
 
 @onready var spawner: Node2D = $Spawner
 @onready var car_obst_timer: Timer = $CarObstTimer
@@ -25,5 +27,9 @@ func _process(delta):
 
 func spawn_shi(obstacle: PackedScene, timer: Timer) -> void:
 	spawner.scene = obstacle
-	spawner.spawn(Vector2(spawn_points.pick_random(), -30))
+	boo = spawn_points.pick_random()
+	while boo == prev_picked_by_random:
+		boo = spawn_points.pick_random()
+	prev_picked_by_random = boo
+	spawner.spawn(Vector2(boo, -30))
 	timer.start()
