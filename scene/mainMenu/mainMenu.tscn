@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://buoepdxuniwqa"]
+
+[ext_resource type="Texture2D" uid="uid://cbju707rcythk" path="res://imgs/buttons/play.png" id="1_duwx3"]
+[ext_resource type="Script" path="res://scene/mainMenu/playTSB.gd" id="2_bqjyl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wxr4"]
+size = Vector2(286, 88)
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 160.0
+offset_bottom = 240.0
+
+[node name="playTSB" type="TouchScreenButton" parent="Panel"]
+position = Vector2(17, 85)
+scale = Vector2(0.447183, 0.55814)
+texture_normal = ExtResource("1_duwx3")
+texture_pressed = ExtResource("1_duwx3")
+shape = SubResource("RectangleShape2D_0wxr4")
+script = ExtResource("2_bqjyl")
+
+[connection signal="pressed" from="Panel/playTSB" to="Panel/playTSB" method="_on_pressed"]
