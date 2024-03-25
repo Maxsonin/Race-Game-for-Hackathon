@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://buoepdxuniwqa"]
+[gd_scene load_steps=26 format=3 uid="uid://buoepdxuniwqa"]
 
 [ext_resource type="AudioStream" uid="uid://dr8douv8elwc7" path="res://music/MainManuMusic.mp3" id="1_m4uie"]
 [ext_resource type="Texture2D" uid="uid://bi3iyfftn310e" path="res://imgs/background/mainMenuBackground/frames/01.png" id="1_usb5h"]
@@ -20,8 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://bjua1q8hwjqbv" path="res://imgs/buttons/quiteButtons/quiteButtonUnactive.png" id="17_qf30m"]
 [ext_resource type="Texture2D" uid="uid://c5ap01h7odkob" path="res://imgs/buttons/quiteButtons/quiteButtonActive.png" id="18_aal5o"]
 [ext_resource type="AudioStream" uid="uid://cucr5qsir3vrk" path="res://sounds/engineStartSound.mp3" id="19_5xn67"]
-[ext_resource type="FontFile" uid="uid://chflfac1g7d6v" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="19_wbavf"]
+[ext_resource type="Texture2D" uid="uid://b1xjx41xdkyvk" path="res://imgs/mainImgs/car.png" id="21_hd4ou"]
 [ext_resource type="PackedScene" uid="uid://c6omje6eu138a" path="res://scene/transition/scene_trasition.tscn" id="22_0b3mj"]
+[ext_resource type="Texture2D" uid="uid://ckhwblvyta0au" path="res://imgs/mainImgs/logoText.png" id="23_4lsht"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bow8m"]
 animations = [{
@@ -80,7 +81,7 @@ size = Vector2(250, 128)
 
 [node name="backgroundMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_m4uie")
-volume_db = -25.213
+volume_db = -9.762
 autoplay = true
 
 [node name="animatedBackground" type="AnimatedSprite2D" parent="."]
@@ -98,14 +99,14 @@ offset_bottom = 240.0
 script = ExtResource("14_54r0p")
 
 [node name="quiteTSB" type="TouchScreenButton" parent="Controls"]
-position = Vector2(16, 144)
+position = Vector2(16, 152)
 scale = Vector2(0.363636, 0.396226)
 texture_normal = ExtResource("17_qf30m")
 texture_pressed = ExtResource("18_aal5o")
 shape = SubResource("RectangleShape2D_2h6gw")
 
 [node name="playTSB" type="TouchScreenButton" parent="Controls"]
-position = Vector2(64, 80)
+position = Vector2(72, 96)
 scale = Vector2(0.363636, 0.396226)
 texture_normal = ExtResource("14_cbvv7")
 texture_pressed = ExtResource("15_nxamw")
@@ -114,29 +115,19 @@ shape = SubResource("RectangleShape2D_2h6gw")
 [node name="engineSound" type="AudioStreamPlayer2D" parent="Controls"]
 stream = ExtResource("19_5xn67")
 
-[node name="title" type="Label" parent="."]
-texture_filter = 1
-offset_left = 8.0
-offset_top = 24.0
-offset_right = 138.0
-offset_bottom = 65.0
-theme_override_colors/font_color = Color(0.839216, 0.239216, 0.921569, 1)
-theme_override_colors/font_shadow_color = Color(0.407843, 0.00784314, 0.458824, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/outline_size = 1
-theme_override_constants/shadow_outline_size = 8
-theme_override_constants/line_spacing = -2
-theme_override_fonts/font = ExtResource("19_wbavf")
-theme_override_font_sizes/font_size = 22
-text = "WIND IN 
-THE WHEELS"
-horizontal_alignment = 1
-vertical_alignment = 1
-max_lines_visible = 3
+[node name="Logo" type="Sprite2D" parent="Controls"]
+texture_filter = 5
+texture_repeat = 1
+position = Vector2(76, 47)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("21_hd4ou")
 
 [node name="SceneTrasition" parent="." instance=ExtResource("22_0b3mj")]
+
+[node name="LogoText" type="Sprite2D" parent="."]
+position = Vector2(80, 80)
+scale = Vector2(0.1248, 0.172951)
+texture = ExtResource("23_4lsht")
 
 [connection signal="pressed" from="Controls/quiteTSB" to="Controls" method="_on_quite_tsb_pressed"]
 [connection signal="pressed" from="Controls/playTSB" to="Controls" method="_on_play_tsb_pressed"]
