@@ -724,8 +724,8 @@ autoplay = "default"
 frame_progress = 0.397054
 
 [node name="Shadows" type="Sprite2D" parent="."]
-position = Vector2(108, 140.5)
-scale = Vector2(0.0635417, 0.0822511)
+position = Vector2(108, 138.5)
+scale = Vector2(0.0635417, 0.0764791)
 texture = ExtResource("156_km576")
 
 [node name="Shadows2" type="Sprite2D" parent="."]
