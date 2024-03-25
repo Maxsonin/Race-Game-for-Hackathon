@@ -31,13 +31,12 @@ script = ExtResource("1_mfxfi")
 script = ExtResource("2_sd4jm")
 
 [node name="Sprite2D" type="Sprite2D" parent="CarHitbox"]
-position = Vector2(-1.90735e-06, 0)
+position = Vector2(1, -2)
 scale = Vector2(0.513228, 0.513228)
 texture = ExtResource("3_a237h")
 script = SubResource("GDScript_qps1k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CarHitbox"]
-position = Vector2(-1, 3)
 shape = SubResource("CapsuleShape2D_fn4jq")
 
 [node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
