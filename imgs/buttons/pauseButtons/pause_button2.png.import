@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwtmx567xmya3"
-path="res://.godot/imported/retryButton.png-c8a00ca26b5d597b589860cb5a90333a.ctex"
+uid="uid://dtcn3dnqkc6vq"
+path="res://.godot/imported/pause_button2.png-a13be2933eb8c61484343f528ef5ca6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imgs/buttons/retryButton.png"
-dest_files=["res://.godot/imported/retryButton.png-c8a00ca26b5d597b589860cb5a90333a.ctex"]
+source_file="res://imgs/buttons/pauseButtons/pause_button2.png"
+dest_files=["res://.godot/imported/pause_button2.png-a13be2933eb8c61484343f528ef5ca6c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buo7or58amyal"
-path="res://.godot/imported/endSceenBackground.jpg-2d4a869171703119d4049f27ed9c190c.ctex"
+uid="uid://b1xjx41xdkyvk"
+path="res://.godot/imported/car.png-763a606d00ee94a7ffffb21be46f6403.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imgs/background/endSceenBackground.jpg"
-dest_files=["res://.godot/imported/endSceenBackground.jpg-2d4a869171703119d4049f27ed9c190c.ctex"]
+source_file="res://imgs/gameLogoImgs/car.png"
+dest_files=["res://.godot/imported/car.png-763a606d00ee94a7ffffb21be46f6403.ctex"]
 
 [params]
 

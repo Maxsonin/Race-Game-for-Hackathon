@@ -2,8 +2,8 @@
 
 [ext_resource type="FontFile" uid="uid://chflfac1g7d6v" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="1_b4ko6"]
 [ext_resource type="Script" path="res://scene/pause/Control.gd" id="2_bn5o4"]
-[ext_resource type="Texture2D" uid="uid://bm07ivdxmy3pc" path="res://imgs/buttons/continueButton.png" id="2_dbyw8"]
-[ext_resource type="Texture2D" uid="uid://4lpbyw3pl18q" path="res://imgs/buttons/toMenuButton.png" id="3_jwnaq"]
+[ext_resource type="Texture2D" uid="uid://bm07ivdxmy3pc" path="res://imgs/buttons/continueButtons/continueButton.png" id="2_dbyw8"]
+[ext_resource type="Texture2D" uid="uid://4lpbyw3pl18q" path="res://imgs/buttons/toMenuButtons/toMenuButton.png" id="3_jwnaq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fhb15"]
 size = Vector2(1800, 800)

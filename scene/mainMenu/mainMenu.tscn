@@ -20,9 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://bjua1q8hwjqbv" path="res://imgs/buttons/quiteButtons/quiteButtonUnactive.png" id="17_qf30m"]
 [ext_resource type="Texture2D" uid="uid://c5ap01h7odkob" path="res://imgs/buttons/quiteButtons/quiteButtonActive.png" id="18_aal5o"]
 [ext_resource type="AudioStream" uid="uid://cucr5qsir3vrk" path="res://sounds/engineStartSound.mp3" id="19_5xn67"]
-[ext_resource type="Texture2D" uid="uid://b1xjx41xdkyvk" path="res://imgs/mainImgs/car.png" id="21_hd4ou"]
+[ext_resource type="Texture2D" uid="uid://b1xjx41xdkyvk" path="res://imgs/gameLogoImgs/car.png" id="21_hd4ou"]
 [ext_resource type="PackedScene" uid="uid://c6omje6eu138a" path="res://scene/transition/scene_trasition.tscn" id="22_0b3mj"]
-[ext_resource type="Texture2D" uid="uid://ckhwblvyta0au" path="res://imgs/mainImgs/logoText.png" id="23_4lsht"]
+[ext_resource type="Texture2D" uid="uid://ckhwblvyta0au" path="res://imgs/gameLogoImgs/logoText.png" id="23_4lsht"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bow8m"]
 animations = [{
