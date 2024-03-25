@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://player_car/car.gd" id="1_mfxfi"]
 [ext_resource type="Script" path="res://player_car/CarHitbox.gd" id="2_sd4jm"]
-[ext_resource type="Texture2D" uid="uid://bkmsuqo42d6kr" path="res://imgs/cars/car_car.png" id="3_a237h"]
+[ext_resource type="Texture2D" uid="uid://bkmsuqo42d6kr" path="res://imgs/cars/blueCar.png" id="3_a237h"]
 [ext_resource type="Script" path="res://components/move_component.gd" id="3_wdsns"]
 [ext_resource type="AudioStream" uid="uid://bxn8n50rbf3q0" path="res://sounds/crashSound.mp3" id="5_xuwir"]
 
