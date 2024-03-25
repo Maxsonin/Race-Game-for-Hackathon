@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://2jyadqptkkfp"]
 
 [ext_resource type="PackedScene" uid="uid://cfeb1uffw13xb" path="res://obstacles/obstacle_base.tscn" id="1_h80u7"]
-[ext_resource type="Texture2D" uid="uid://ds85ng3104rl4" path="res://imgs/cars/taxi.png" id="2_j7gi1"]
+[ext_resource type="Texture2D" uid="uid://ds85ng3104rl4" path="res://imgs/cars/npc_cars/taxi.png" id="2_j7gi1"]
 [ext_resource type="Script" path="res://components/move_component.gd" id="3_6sgay"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1y261"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dgno155cekcsn"]
 
 [ext_resource type="PackedScene" uid="uid://cfeb1uffw13xb" path="res://obstacles/obstacle_base.tscn" id="1_wt27l"]
-[ext_resource type="Texture2D" uid="uid://c65p6e6kvelo" path="res://imgs/cars/jeep.png" id="2_56y3j"]
+[ext_resource type="Texture2D" uid="uid://c65p6e6kvelo" path="res://imgs/cars/npc_cars/jeep.png" id="2_d8ejb"]
 [ext_resource type="Script" path="res://components/move_component.gd" id="3_pdv3c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4iuf2"]
@@ -12,7 +12,7 @@ height = 36.0
 
 [node name="Sprite2D" parent="." index="0"]
 rotation = 3.14159
-texture = ExtResource("2_56y3j")
+texture = ExtResource("2_d8ejb")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 shape = SubResource("CapsuleShape2D_4iuf2")

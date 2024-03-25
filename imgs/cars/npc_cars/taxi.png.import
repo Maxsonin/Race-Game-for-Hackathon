@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c65p6e6kvelo"
-path="res://.godot/imported/jeep.png-d79811102d0fa0bc6bda03853c6e2487.ctex"
+uid="uid://ds85ng3104rl4"
+path="res://.godot/imported/taxi.png-ec9dffc4240cd15daa9be6a779cf895a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imgs/cars/jeep.png"
-dest_files=["res://.godot/imported/jeep.png-d79811102d0fa0bc6bda03853c6e2487.ctex"]
+source_file="res://imgs/cars/npc_cars/taxi.png"
+dest_files=["res://.godot/imported/taxi.png-ec9dffc4240cd15daa9be6a779cf895a.ctex"]
 
 [params]
 

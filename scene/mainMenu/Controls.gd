@@ -18,6 +18,7 @@ func _on_quite_tsb_pressed():
 
 
 func _on_scene_trasition_transitioned() -> void:
+	Global.point = 0
 	if changing_to_store:
 		get_tree().change_scene_to_file("res://scene/garage/garage.tscn")
 	else:
