@@ -123,6 +123,7 @@ _data = {
 
 [node name="backgroundMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_m4uie")
+volume_db = -21.3333
 autoplay = true
 
 [node name="animatedBackground" type="AnimatedSprite2D" parent="."]

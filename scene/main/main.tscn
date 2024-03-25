@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://psf0b7wkagio"]
+[gd_scene load_steps=21 format=3 uid="uid://psf0b7wkagio"]
 
 [ext_resource type="PackedScene" uid="uid://csg7h2gw70il0" path="res://player_car/car.tscn" id="1_4gxa1"]
 [ext_resource type="Script" path="res://scene/main/main.gd" id="1_eq3eq"]
@@ -78,6 +78,27 @@ func _process(delta):
 	text = \"Score \" + str(int(Global.point))
 	pass
 "
+
+[sub_resource type="Animation" id="Animation_d0fwd"]
+resource_name = "out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("mainMusic:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-15.0, -80.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tamxy"]
+_data = {
+"out": SubResource("Animation_d0fwd")
+}
 
 [node name="GameScene" type="Node"]
 script = ExtResource("1_eq3eq")
@@ -177,6 +198,12 @@ z_index = 5
 offset_left = -2.0
 offset_right = 161.0
 offset_bottom = 241.0
+
+[node name="soundInOutController" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_tamxy")
+}
 
 [connection signal="car_got_hit_fr" from="Car" to="." method="_on_car_car_got_hit_fr"]
 [connection signal="pressed" from="TSBControls/ToRightTSB" to="TSBControls" method="_on_to_right_tsb_pressed"]
