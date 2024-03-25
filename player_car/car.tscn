@@ -1,10 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://csg7h2gw70il0"]
+[gd_scene load_steps=8 format=3 uid="uid://csg7h2gw70il0"]
 
 [ext_resource type="Script" path="res://player_car/car.gd" id="1_mfxfi"]
 [ext_resource type="Script" path="res://player_car/CarHitbox.gd" id="2_sd4jm"]
 [ext_resource type="Texture2D" uid="uid://bkmsuqo42d6kr" path="res://imgs/cars/car_car.png" id="3_a237h"]
 [ext_resource type="Script" path="res://components/move_component.gd" id="3_wdsns"]
 [ext_resource type="AudioStream" uid="uid://bxn8n50rbf3q0" path="res://sounds/crashSound.mp3" id="5_xuwir"]
+
+[sub_resource type="GDScript" id="GDScript_qps1k"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	set_texture(Global.car_img)
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fn4jq"]
 height = 38.0
@@ -19,6 +34,7 @@ script = ExtResource("2_sd4jm")
 position = Vector2(-1.90735e-06, 0)
 scale = Vector2(0.513228, 0.513228)
 texture = ExtResource("3_a237h")
+script = SubResource("GDScript_qps1k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CarHitbox"]
 position = Vector2(-1, 3)

@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://bh00gsb3co1ch"]
+
+[ext_resource type="Texture2D" uid="uid://bkmsuqo42d6kr" path="res://imgs/cars/car_car.png" id="2_n6kes"]
+[ext_resource type="Texture2D" uid="uid://4lpbyw3pl18q" path="res://imgs/buttons/toMenuButtons/toMenuButton.png" id="3_fmcx6"]
+[ext_resource type="Texture2D" uid="uid://c8al5jq4gdxxh" path="res://imgs/cars/car3.png" id="3_pfbtp"]
+[ext_resource type="Texture2D" uid="uid://b1l3say3728x6" path="res://imgs/cars/car4.png" id="4_jg2ry"]
+
+[sub_resource type="GDScript" id="GDScript_cy1gq"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_touch_screen_button_pressed():
+	Global.car_img=load(\"res://imgs/cars/car3.png\")
+	pass # Replace with function body.
+
+
+func _on_touch_screen_button_2_pressed():
+	Global.car_img=load(\"res://imgs/cars/car_car.png\")
+	pass # Replace with function body.
+
+
+func _on_touch_screen_button_3_pressed():
+	get_tree().change_scene_to_file(\"res://scene/mainMenu/mainMenu.tscn\")
+	pass # Replace with function body.
+
+
+func _on_touch_screen_button_4_pressed():
+	Global.car_img=load(\"res://imgs/cars/car4.png\")
+	pass # Replace with function body.
+"
+
+[node name="Garage" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = SubResource("GDScript_cy1gq")
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Control"]
+position = Vector2(2, 4)
+scale = Vector2(0.514563, 0.580882)
+texture_normal = ExtResource("2_n6kes")
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="Control"]
+position = Vector2(30, 170)
+scale = Vector2(0.0628048, 0.0654206)
+texture_normal = ExtResource("3_fmcx6")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control"]
+position = Vector2(50, 16)
+scale = Vector2(0.54, 0.56)
+texture_normal = ExtResource("3_pfbtp")
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="Control"]
+position = Vector2(106, 16)
+scale = Vector2(0.58, 0.61)
+texture_normal = ExtResource("4_jg2ry")
+
+[connection signal="pressed" from="Control/TouchScreenButton2" to="Control" method="_on_touch_screen_button_2_pressed"]
+[connection signal="pressed" from="Control/TouchScreenButton3" to="Control" method="_on_touch_screen_button_3_pressed"]
+[connection signal="pressed" from="Control/TouchScreenButton" to="Control" method="_on_touch_screen_button_pressed"]
+[connection signal="pressed" from="Control/TouchScreenButton4" to="Control" method="_on_touch_screen_button_4_pressed"]
