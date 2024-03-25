@@ -21,11 +21,13 @@ func _process(delta):
 
 func _on_touch_screen_button_pressed():
 	Global.car_img=load(\"res://imgs/cars/car3.png\")
+	get_tree().change_scene_to_file(\"res://scene/mainMenu/mainMenu.tscn\")
 	pass # Replace with function body.
 
 
 func _on_touch_screen_button_2_pressed():
 	Global.car_img=load(\"res://imgs/cars/car_car.png\")
+	get_tree().change_scene_to_file(\"res://scene/mainMenu/mainMenu.tscn\")
 	pass # Replace with function body.
 
 
@@ -36,6 +38,7 @@ func _on_touch_screen_button_3_pressed():
 
 func _on_touch_screen_button_4_pressed():
 	Global.car_img=load(\"res://imgs/cars/car4.png\")
+	get_tree().change_scene_to_file(\"res://scene/mainMenu/mainMenu.tscn\")
 	pass # Replace with function body.
 "
 
