@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3wry2bn7m8hg"]
+
+[ext_resource type="PackedScene" uid="uid://cfeb1uffw13xb" path="res://obstacles/obstacle_base.tscn" id="1_mfi1p"]
+[ext_resource type="Texture2D" uid="uid://vivutb3jbiu3" path="res://imgs/cars/semi.png" id="2_2ukq7"]
+[ext_resource type="Script" path="res://components/move_component.gd" id="3_jrgc6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qifaa"]
+radius = 9.0
+height = 54.0
+
+[node name="SemiObstacle" instance=ExtResource("1_mfi1p")]
+
+[node name="Sprite2D" parent="." index="0"]
+rotation = 3.14159
+texture = ExtResource("2_2ukq7")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CapsuleShape2D_qifaa")
+
+[node name="MoveComponent" type="Node" parent="." index="2" node_paths=PackedStringArray("actor")]
+script = ExtResource("3_jrgc6")
+actor = NodePath("..")

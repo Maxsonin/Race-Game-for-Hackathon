@@ -1,24 +1,52 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbermyk47ak70"]
+[gd_scene load_steps=9 format=3 uid="uid://dbermyk47ak70"]
 
 [ext_resource type="Script" path="res://obstacles/obstacles_generator.gd" id="1_hofhb"]
 [ext_resource type="Script" path="res://obstacles/Spawner.gd" id="1_relre"]
 [ext_resource type="PackedScene" uid="uid://c7ecwvcki3wrx" path="res://obstacles/car_obstacle.tscn" id="2_ogd3n"]
 [ext_resource type="PackedScene" uid="uid://di42gx55ot2rl" path="res://obstacles/sign_obstacle.tscn" id="3_n7t16"]
+[ext_resource type="PackedScene" uid="uid://2jyadqptkkfp" path="res://obstacles/taxi_obstacle.tscn" id="4_a0bbg"]
+[ext_resource type="PackedScene" uid="uid://d3wry2bn7m8hg" path="res://obstacles/semi_obstacle.tscn" id="5_1wx6b"]
+[ext_resource type="PackedScene" uid="uid://dgno155cekcsn" path="res://obstacles/jeep_obstacle.tscn" id="6_fcwds"]
+[ext_resource type="PackedScene" uid="uid://dtm80afglyh1o" path="res://obstacles/pickup_obstacle.tscn" id="7_jxm5u"]
 
 [node name="ObstaclesGenerator" type="Node2D"]
 script = ExtResource("1_hofhb")
 CarObstacle = ExtResource("2_ogd3n")
 SignObstacle = ExtResource("3_n7t16")
+TaxiObstacle = ExtResource("4_a0bbg")
+SemiObstacle = ExtResource("5_1wx6b")
+JeepObstacle = ExtResource("6_fcwds")
+PickupObstacle = ExtResource("7_jxm5u")
 
 [node name="Spawner" type="Node2D" parent="."]
 script = ExtResource("1_relre")
 
 [node name="CarObstTimer" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 8.0
 one_shot = true
 autostart = true
 
 [node name="SignObstTimer" type="Timer" parent="."]
-wait_time = 7.0
+wait_time = 15.0
+one_shot = true
+autostart = true
+
+[node name="TaxiObstTimer" type="Timer" parent="."]
+wait_time = 7.5
+one_shot = true
+autostart = true
+
+[node name="SemiObstTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="JeepObstTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="PickupObstTimer" type="Timer" parent="."]
+wait_time = 4.0
 one_shot = true
 autostart = true

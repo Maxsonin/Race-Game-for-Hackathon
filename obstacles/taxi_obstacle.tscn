@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://2jyadqptkkfp"]
+
+[ext_resource type="PackedScene" uid="uid://cfeb1uffw13xb" path="res://obstacles/obstacle_base.tscn" id="1_h80u7"]
+[ext_resource type="Texture2D" uid="uid://ds85ng3104rl4" path="res://imgs/cars/taxi.png" id="2_j7gi1"]
+[ext_resource type="Script" path="res://components/move_component.gd" id="3_6sgay"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1y261"]
+height = 34.0
+
+[node name="TaxiObstacle" instance=ExtResource("1_h80u7")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-1, 0)
+rotation = 3.14159
+texture = ExtResource("2_j7gi1")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CapsuleShape2D_1y261")
+
+[node name="MoveComponent" type="Node" parent="." index="2" node_paths=PackedStringArray("actor")]
+script = ExtResource("3_6sgay")
+actor = NodePath("..")
