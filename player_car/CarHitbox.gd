@@ -15,7 +15,6 @@ func _ready():
 func _on_body_entered(body: Area2D):
 	if body.has_method("get_name"):
 		var body_name = body.get_name()
-		print("Collided with:", body_name)
 		crash_sound.play()
 		if body.get_parent().has_node("MoveComponent"):
 			move_component.speed = body.get_parent().get_node("MoveComponent").speed

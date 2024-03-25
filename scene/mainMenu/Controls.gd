@@ -3,6 +3,8 @@ extends Control
 @onready var engine_sound = %engineSound
 @onready var scene_trasition: CanvasLayer = $"../SceneTrasition"
 
+var changing_to_store = false
+
 func _on_play_tsb_pressed():
 	Global.point = 0
 	engine_sound.play()
@@ -16,8 +18,13 @@ func _on_quite_tsb_pressed():
 
 
 func _on_scene_trasition_transitioned() -> void:
-	get_tree().change_scene_to_file("res://scene/main/main.tscn")
+	if changing_to_store:
+		get_tree().change_scene_to_file("res://scene/garage/garage.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scene/main/main.tscn")
 
 
 func _on_store_tsb_pressed():
-	get_tree().change_scene_to_file("res://scene/garage/garage.tscn")
+	changing_to_store = true
+	scene_trasition.transition()
+	
