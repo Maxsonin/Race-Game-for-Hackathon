@@ -1,4 +1,4 @@
-[gd_scene load_steps=161 format=3 uid="uid://cgmoq5r0iaxr6"]
+[gd_scene load_steps=162 format=3 uid="uid://cgmoq5r0iaxr6"]
 
 [ext_resource type="FontFile" uid="uid://chflfac1g7d6v" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="2_upgie"]
 [ext_resource type="Texture2D" uid="uid://cwtmx567xmya3" path="res://imgs/buttons/retryButtons/retryButton.png" id="3_f30dc"]
@@ -156,6 +156,7 @@
 [ext_resource type="Texture2D" uid="uid://dj2ufoisujbw" path="res://imgs/background/framsEndSceen/ezgif-3-62156bc560-148.png" id="154_cvbox"]
 [ext_resource type="Texture2D" uid="uid://ch42rtjygrnd5" path="res://imgs/background/framsEndSceen/ezgif-3-62156bc560-149.png" id="155_qufpm"]
 [ext_resource type="Texture2D" uid="uid://ba6k830a3pnnk" path="res://imgs/helperImgs/shadows.png" id="156_km576"]
+[ext_resource type="AudioStream" uid="uid://cnamtl0crnnpi" path="res://music/endScreenMusic.mp3" id="157_rwcd1"]
 
 [sub_resource type="GDScript" id="GDScript_500kx"]
 script/source = "extends Label
@@ -731,6 +732,11 @@ texture = ExtResource("156_km576")
 position = Vector2(112.75, 93)
 scale = Vector2(0.0690104, 0.0836941)
 texture = ExtResource("156_km576")
+
+[node name="endScreenMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("157_rwcd1")
+volume_db = -15.0
+autoplay = true
 
 [connection signal="pressed" from="Controls/retryTSB" to="Controls" method="_on_retry_tsb_pressed"]
 [connection signal="pressed" from="Controls/menuTSB" to="Controls" method="_on_menu_tsb_pressed"]
