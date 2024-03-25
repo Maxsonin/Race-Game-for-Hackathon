@@ -171,6 +171,12 @@ unique_name_in_owner = true
 process_priority = 10
 visible = false
 
+[node name="night" type="Panel" parent="."]
+z_index = 5
+offset_left = -2.0
+offset_right = 161.0
+offset_bottom = 241.0
+
 [connection signal="car_got_hit_fr" from="Car" to="." method="_on_car_car_got_hit_fr"]
 [connection signal="pressed" from="TSBControls/ToRightTSB" to="TSBControls" method="_on_to_right_tsb_pressed"]
 [connection signal="pressed" from="TSBControls/ToLeftTSB" to="TSBControls" method="_on_to_left_tsb_pressed"]

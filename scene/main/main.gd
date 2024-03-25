@@ -1,7 +1,7 @@
 extends Node
 
 @onready var constant_engine_sound = %constantEngineSound
-
+@onready var night=$night
 @onready var pause_menu = %PauseMenu
 var paused = false
 
@@ -20,6 +20,10 @@ func _ready():
 	pass
 
 func _process(delta):
+	if (int(Global.point)%1000==0):
+		Global.point+=1
+		print("night")
+		night.visible=!night.visible
 	if Input.is_action_just_pressed("Pause"):
 		pauseManu()
 
