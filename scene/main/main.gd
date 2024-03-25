@@ -16,16 +16,22 @@ var target_position_x: float = 96
 var move_speed: float = (VALUE_NEEDED_TO_CHANGE_ROAD / TIME_NEEDED_TO_CHANGE_ROAD)
 var targetPositions := [32, 64, 96, 128]
 var pos = 1
+
+
 func _ready():
-	pass
+	Global.night = false
 
 func _process(delta):
 	if (int(Global.point)%1400>400 and int(Global.point)%1400<600):
 		night.modulate=Color(0,0,0,(float((int(Global.point)%200))/200))
 		print("night")
+		if (float((int(Global.point)%200))/200) > 0.5 and not Global.night:
+			Global.night = true
 	if (int(Global.point)%1400>1200 and int(Global.point)%1400<1400):
 		night.modulate=Color(0,0,0,1-(float((int(Global.point)%200))/200))
 		print("day")
+		if (float((int(Global.point)%200))/200) < 0.5 and Global.night:
+			Global.night = false
 	if Input.is_action_just_pressed("Pause"):
 		pauseManu()
 

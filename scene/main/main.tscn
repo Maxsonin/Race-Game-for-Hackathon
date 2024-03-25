@@ -1,9 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://psf0b7wkagio"]
+[gd_scene load_steps=21 format=3 uid="uid://psf0b7wkagio"]
 
 [ext_resource type="PackedScene" uid="uid://csg7h2gw70il0" path="res://player_car/car.tscn" id="1_4gxa1"]
 [ext_resource type="Script" path="res://scene/main/main.gd" id="1_eq3eq"]
 [ext_resource type="PackedScene" uid="uid://wdk54g4eoif" path="res://road/road.tscn" id="2_i6rvc"]
-[ext_resource type="Texture2D" uid="uid://bgdje0mbtbqnf" path="res://icon.svg" id="3_uwaya"]
 [ext_resource type="Texture2D" uid="uid://bda3c73uuyb8e" path="res://imgs/buttons/pauseButtons/pauseButton.png" id="4_n11pj"]
 [ext_resource type="Script" path="res://scene/mainMenu/playTSB.gd" id="5_15ypm"]
 [ext_resource type="PackedScene" uid="uid://dbermyk47ak70" path="res://obstacles/obstacles_generator.tscn" id="6_s2b05"]
@@ -106,18 +105,8 @@ script = ExtResource("1_eq3eq")
 
 [node name="Car" parent="." instance=ExtResource("1_4gxa1")]
 unique_name_in_owner = true
-z_index = 15
 z_as_relative = false
 position = Vector2(96, 200)
-
-[node name="PointLight2D" type="PointLight2D" parent="Car"]
-z_index = 1
-z_as_relative = false
-position = Vector2(3.8147e-06, -65.25)
-scale = Vector2(0.351563, 0.722656)
-range_layer_min = -1
-range_layer_max = 1
-texture = ExtResource("3_uwaya")
 
 [node name="turnAnim" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
