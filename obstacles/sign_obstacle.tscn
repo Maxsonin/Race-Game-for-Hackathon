@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://obstacles/SignMoveComponent.gd" id="3_tv15r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8w6i"]
-size = Vector2(24, 21)
+size = Vector2(22, 3)
 
 [node name="sign_obstacle" instance=ExtResource("1_t85h3")]
 
@@ -14,7 +14,7 @@ scale = Vector2(0.03, 0.03)
 texture = ExtResource("2_6uj0a")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(0, 0.5)
+position = Vector2(0, 10.5)
 shape = SubResource("RectangleShape2D_s8w6i")
 
 [node name="SignMoveComponent" type="Node" parent="." index="2" node_paths=PackedStringArray("actor")]
