@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://bh00gsb3co1ch"]
 
 [ext_resource type="Texture2D" uid="uid://da6ocqoc88mad" path="res://imgs/background/parking/parking.png" id="1_juvo4"]
+[ext_resource type="Texture2D" uid="uid://co1mwrtt4p7wk" path="res://imgs/buttons/toMenuButtons/to_menu_button.png" id="2_8msul"]
 [ext_resource type="Texture2D" uid="uid://bkmsuqo42d6kr" path="res://imgs/cars/car_car.png" id="2_n6kes"]
-[ext_resource type="Texture2D" uid="uid://4lpbyw3pl18q" path="res://imgs/buttons/toMenuButtons/toMenuButton.png" id="3_fmcx6"]
 [ext_resource type="Texture2D" uid="uid://c8al5jq4gdxxh" path="res://imgs/cars/car3.png" id="3_pfbtp"]
 [ext_resource type="Texture2D" uid="uid://b1l3say3728x6" path="res://imgs/cars/car4.png" id="4_jg2ry"]
 
@@ -77,21 +77,6 @@ tracks/0/keys = {
 "values": [Vector2(33, 47), Vector2(32, -29)]
 }
 
-[sub_resource type="Animation" id="Animation_panq3"]
-resource_name = "red"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/Sprite2D2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(131, 52), Vector2(130, -26)]
-}
-
 [sub_resource type="Animation" id="Animation_bs5om"]
 resource_name = "green"
 tracks/0/type = "value"
@@ -105,6 +90,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(79, 52), Vector2(81, -28)]
+}
+
+[sub_resource type="Animation" id="Animation_panq3"]
+resource_name = "red"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Sprite2D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(131, 52), Vector2(130, -26)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fdovi"]
@@ -132,7 +132,8 @@ script = SubResource("GDScript_cy1gq")
 [node name="TouchScreenButton3" type="TouchScreenButton" parent="Control"]
 position = Vector2(30, 166)
 scale = Vector2(0.0628048, 0.0654206)
-texture_normal = ExtResource("3_fmcx6")
+texture_normal = ExtResource("2_8msul")
+texture_pressed = ExtResource("2_8msul")
 
 [node name="Sprite2D" type="Sprite2D" parent="Control"]
 position = Vector2(33, 47)

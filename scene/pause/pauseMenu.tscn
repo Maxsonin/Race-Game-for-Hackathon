@@ -2,8 +2,8 @@
 
 [ext_resource type="FontFile" uid="uid://chflfac1g7d6v" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="1_b4ko6"]
 [ext_resource type="Script" path="res://scene/pause/Control.gd" id="2_bn5o4"]
-[ext_resource type="Texture2D" uid="uid://bm07ivdxmy3pc" path="res://imgs/buttons/continueButtons/continueButton.png" id="2_dbyw8"]
-[ext_resource type="Texture2D" uid="uid://4lpbyw3pl18q" path="res://imgs/buttons/toMenuButtons/toMenuButton.png" id="3_jwnaq"]
+[ext_resource type="Texture2D" uid="uid://dibtbre5ie6vj" path="res://imgs/buttons/continueButtons/continue_button.png" id="2_sr01r"]
+[ext_resource type="Texture2D" uid="uid://co1mwrtt4p7wk" path="res://imgs/buttons/toMenuButtons/to_menu_button.png" id="3_pt5jp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fhb15"]
 size = Vector2(1800, 800)
@@ -31,8 +31,8 @@ z_index = 6
 texture_filter = 1
 position = Vector2(39, 87)
 scale = Vector2(0.05, 0.05)
-texture_normal = ExtResource("2_dbyw8")
-texture_pressed = ExtResource("2_dbyw8")
+texture_normal = ExtResource("2_sr01r")
+texture_pressed = ExtResource("2_sr01r")
 shape = SubResource("RectangleShape2D_fhb15")
 action = "Pause"
 
@@ -41,8 +41,8 @@ unique_name_in_owner = true
 z_index = 6
 position = Vector2(40, 128)
 scale = Vector2(0.05, 0.05)
-texture_normal = ExtResource("3_jwnaq")
-texture_pressed = ExtResource("3_jwnaq")
+texture_normal = ExtResource("3_pt5jp")
+texture_pressed = ExtResource("3_pt5jp")
 shape = SubResource("RectangleShape2D_ytpl5")
 
 [node name="pauseTitle" type="Label" parent="."]

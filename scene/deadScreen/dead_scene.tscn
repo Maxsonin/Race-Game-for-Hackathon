@@ -1,9 +1,9 @@
 [gd_scene load_steps=162 format=3 uid="uid://cgmoq5r0iaxr6"]
 
 [ext_resource type="FontFile" uid="uid://chflfac1g7d6v" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="2_upgie"]
-[ext_resource type="Texture2D" uid="uid://cwtmx567xmya3" path="res://imgs/buttons/retryButtons/retryButton.png" id="3_f30dc"]
 [ext_resource type="Script" path="res://scene/deadScreen/Controls.gd" id="3_oai6v"]
-[ext_resource type="Texture2D" uid="uid://4lpbyw3pl18q" path="res://imgs/buttons/toMenuButtons/toMenuButton.png" id="4_damf6"]
+[ext_resource type="Texture2D" uid="uid://dmpr1gr8acbrt" path="res://imgs/buttons/retryButtons/retry_button.png" id="3_pspbx"]
+[ext_resource type="Texture2D" uid="uid://co1mwrtt4p7wk" path="res://imgs/buttons/toMenuButtons/to_menu_button.png" id="4_bhv2o"]
 [ext_resource type="PackedScene" uid="uid://c6omje6eu138a" path="res://scene/transition/scene_trasition.tscn" id="6_mc4fg"]
 [ext_resource type="Texture2D" uid="uid://ciu7gjvc0fo3g" path="res://imgs/background/framsEndSceen/ezgif-3-62156bc560-0.png" id="6_pbghe"]
 [ext_resource type="Texture2D" uid="uid://bq8qwdnvs0ber" path="res://imgs/background/framsEndSceen/ezgif-3-62156bc560-1.png" id="7_p73fj"]
@@ -699,10 +699,10 @@ script = ExtResource("3_oai6v")
 [node name="retryTSB" type="TouchScreenButton" parent="Controls"]
 unique_name_in_owner = true
 z_index = 6
-position = Vector2(66, 121)
+position = Vector2(66, 111)
 scale = Vector2(0.05, 0.05)
-texture_normal = ExtResource("3_f30dc")
-texture_pressed = ExtResource("3_f30dc")
+texture_normal = ExtResource("3_pspbx")
+texture_pressed = ExtResource("3_pspbx")
 shape = SubResource("RectangleShape2D_x74cr")
 
 [node name="menuTSB" type="TouchScreenButton" parent="Controls"]
@@ -710,8 +710,8 @@ unique_name_in_owner = true
 z_index = 6
 position = Vector2(66, 74)
 scale = Vector2(0.05, 0.05)
-texture_normal = ExtResource("4_damf6")
-texture_pressed = ExtResource("4_damf6")
+texture_normal = ExtResource("4_bhv2o")
+texture_pressed = ExtResource("4_bhv2o")
 shape = SubResource("RectangleShape2D_x74cr")
 
 [node name="SceneTrasition" parent="." instance=ExtResource("6_mc4fg")]
