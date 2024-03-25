@@ -2,7 +2,7 @@ extends Node
 
 @onready var sound_in_out_controller = %soundInOutController
 @onready var constant_engine_sound = %constantEngineSound
-@onready var night=$night
+@onready var night = $night
 @onready var pause_menu = %PauseMenu
 var paused = false
 
