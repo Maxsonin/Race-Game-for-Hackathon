@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bh00gsb3co1ch"]
+[gd_scene load_steps=21 format=3 uid="uid://bh00gsb3co1ch"]
 
 [ext_resource type="PackedScene" uid="uid://wdk54g4eoif" path="res://road/road.tscn" id="1_na4gb"]
 [ext_resource type="Texture2D" uid="uid://co1mwrtt4p7wk" path="res://imgs/buttons/toMenuButtons/to_menu_button.png" id="2_8msul"]
@@ -17,6 +17,8 @@ script/source = "extends Control
 
 @onready var scene_trasition: CanvasLayer = $\"../SceneTrasition\"
 
+@onready var sound_in_out_controller = %soundInOutController
+
 func _on_touch_screen_button_3_pressed():
 	get_tree().change_scene_to_file(\"res://scene/mainMenu/mainMenu.tscn\")
 
@@ -26,27 +28,28 @@ func _on_scene_trasition_transitioned() -> void:
 
 func _on_blue_car_tsb_pressed():
 	Global.car_img = load(\"res://imgs/cars/blueCar.png\")
+	sound_in_out_controller.play(\"out\")
 	animation_player.play(\"blueChoosen\")
-	await get_tree().create_timer(1).timeout
 	scene_trasition.transition()
 
 func _on_aqua_car_tsb_pressed():
 	Global.car_img = load(\"res://imgs/cars/aquaCar.png\")
+	sound_in_out_controller.play(\"out\")
 	animation_player.play(\"aquaChoosen\")
-	await get_tree().create_timer(1).timeout
 	scene_trasition.transition()
 
 func _on_red_car_tsb_pressed():
 	Global.car_img = load(\"res://imgs/cars/redCar.png\")
+	sound_in_out_controller.play(\"out\")
 	animation_player.play(\"redChoosen\")
-	await get_tree().create_timer(1).timeout
 	scene_trasition.transition()
 
 func _on_white_car_tsb_pressed():
 	Global.car_img = load(\"res://imgs/cars/whiteCar.png\")
+	sound_in_out_controller.play(\"out\")
 	animation_player.play(\"whiteChoosen\")
-	await get_tree().create_timer(1).timeout
 	scene_trasition.transition()
+	
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2kl37"]
@@ -177,6 +180,27 @@ _data = {
 "whiteChoosen": SubResource("Animation_vcc7p")
 }
 
+[sub_resource type="Animation" id="Animation_uc0yo"]
+resource_name = "out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-5.0, -60.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rdh5m"]
+_data = {
+"out": SubResource("Animation_uc0yo")
+}
+
 [node name="Garage" type="Node2D"]
 position = Vector2(0, 1)
 
@@ -268,6 +292,12 @@ vertical_alignment = 1
 stream = ExtResource("9_nmxfb")
 volume_db = -5.0
 autoplay = true
+
+[node name="soundInOutController" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_rdh5m")
+}
 
 [connection signal="pressed" from="Control/blueCarTSB" to="Control" method="_on_blue_car_tsb_pressed"]
 [connection signal="pressed" from="Control/aquaCarTSB" to="Control" method="_on_aqua_car_tsb_pressed"]

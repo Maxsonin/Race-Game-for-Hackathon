@@ -2,13 +2,15 @@ extends Control
 
 @onready var engine_sound = %engineSound
 @onready var scene_trasition: CanvasLayer = $"../SceneTrasition"
+@onready var sound_in_out_controller = %soundInOutController
 
 var changing_to_store = false
 
 func _on_play_tsb_pressed():
 	Global.point = 0
 	engine_sound.play()
-	await get_tree().create_timer(1.0).timeout
+	sound_in_out_controller.play("out")
+	await get_tree().create_timer(2.0).timeout
 	scene_trasition.transition()
 
 
