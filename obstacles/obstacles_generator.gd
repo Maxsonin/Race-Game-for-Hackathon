@@ -5,7 +5,7 @@ extends Node2D
 
 var screen_width = ProjectSettings.get_setting("display/window/size/viewport_width")
 var margine = 8
-var spawn_points = [35, 65, 95, 125]
+var spawn_points = [32, 64, 96, 128]
 var prev_picked_by_random = 0
 var boo = 0
 

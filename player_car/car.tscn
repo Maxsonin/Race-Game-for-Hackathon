@@ -31,7 +31,7 @@ script = ExtResource("1_mfxfi")
 script = ExtResource("2_sd4jm")
 
 [node name="Sprite2D" type="Sprite2D" parent="CarHitbox"]
-position = Vector2(1, -2)
+position = Vector2(1, 0)
 scale = Vector2(0.513228, 0.513228)
 texture = ExtResource("3_a237h")
 script = SubResource("GDScript_qps1k")

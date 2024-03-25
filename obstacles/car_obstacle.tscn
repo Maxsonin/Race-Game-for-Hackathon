@@ -10,6 +10,7 @@ height = 36.0
 [node name="CarObstacle" instance=ExtResource("1_djyy2")]
 
 [node name="Sprite2D" parent="." index="0"]
+position = Vector2(-0.23, 0)
 rotation = 3.14159
 scale = Vector2(0.501577, 0.501577)
 texture = ExtResource("2_p8c6r")
