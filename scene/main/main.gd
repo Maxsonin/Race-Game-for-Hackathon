@@ -11,8 +11,10 @@ var paused = false
 @onready var car = $Car
 const VALUE_NEEDED_TO_CHANGE_ROAD = 32
 const TIME_NEEDED_TO_CHANGE_ROAD = 1
-var target_position_x: float = 0
-var move_speed: float = 0
+var target_position_x: float = 96
+var move_speed: float = (VALUE_NEEDED_TO_CHANGE_ROAD / TIME_NEEDED_TO_CHANGE_ROAD)
+var targetPositions := [32, 64, 96, 128]
+var pos = 1
 
 func _ready():
 	pass
@@ -21,25 +23,19 @@ func _process(delta):
 	if Input.is_action_just_pressed("Pause"):
 		pauseManu()
 
-	elif Input.is_action_just_pressed("MoveRight") and car.position.x < 120:
+	elif Input.is_action_just_pressed("MoveRight") and pos < 2:
 		if not car.can_move: return
 		turn_anim.play("turn_right")
-		target_position_x = car.position.x + VALUE_NEEDED_TO_CHANGE_ROAD
-		move_speed = (VALUE_NEEDED_TO_CHANGE_ROAD / TIME_NEEDED_TO_CHANGE_ROAD)
+		pos += 1
 
-	elif Input.is_action_just_pressed("MoveLeft") and car.position.x > 62:
+	elif Input.is_action_just_pressed("MoveLeft") and pos > -1:
 		if not car.can_move: return
 		turn_anim.play("turn_left")
-		target_position_x = car.position.x - VALUE_NEEDED_TO_CHANGE_ROAD
-		move_speed = (VALUE_NEEDED_TO_CHANGE_ROAD / TIME_NEEDED_TO_CHANGE_ROAD)
+		pos -= 1
 
-	if move_speed > 0:
-		car.position.x = lerp(car.position.x, target_position_x, move_speed * delta)
-		
-	if move_speed == 0:
-		target_position_x = car.position.x 
-		move_speed = (VALUE_NEEDED_TO_CHANGE_ROAD / TIME_NEEDED_TO_CHANGE_ROAD)
-		corig()
+	setPosition()
+	car.position.x = lerp(car.position.x, target_position_x, move_speed * delta)
+
 
 func pauseManu():
 	if paused:
@@ -61,15 +57,12 @@ func _on_car_car_got_hit_fr() -> void:
 func _on_scene_trasition_transitioned() -> void:
 	get_tree().change_scene_to_file("res://scene/deadScreen/dead_scene.tscn")
 
-func corig():
-	if car.position.x > 133 and car.position.x>113:
-		car.position.x = 128
-		
-	if car.position.x > 27 and car.position.x <= 57:
-		car.position.x = 32
-		
-	if car.position.x > 57 and car.position.x <= 80:
-		car.position.x = 63
-		
-	if car.position.x > 80 and car.position.x <= 113:
-		car.position.x=96
+func setPosition():
+	if pos == -1:
+		target_position_x = targetPositions[0]
+	elif pos == 0:
+		target_position_x = targetPositions[1]
+	elif pos == 1:
+		target_position_x = targetPositions[2]
+	elif pos == 2:
+		target_position_x = targetPositions[3]
