@@ -1,18 +1,18 @@
 [gd_scene load_steps=5 format=3 uid="uid://c7ecwvcki3wrx"]
 
 [ext_resource type="PackedScene" uid="uid://cfeb1uffw13xb" path="res://obstacles/obstacle_base.tscn" id="1_djyy2"]
-[ext_resource type="Texture2D" uid="uid://bwt8tv8nv7pdt" path="res://imgs/cars/car_2.png" id="2_5rsm5"]
+[ext_resource type="Texture2D" uid="uid://cwhbylp7k1rs5" path="res://imgs/cars/car2.png" id="2_p8c6r"]
 [ext_resource type="Script" path="res://components/move_component.gd" id="3_tt7yh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y4cwl"]
-height = 52.0
+height = 36.0
 
 [node name="CarObstacle" instance=ExtResource("1_djyy2")]
 
 [node name="Sprite2D" parent="." index="0"]
 rotation = 3.14159
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_5rsm5")
+scale = Vector2(0.501577, 0.501577)
+texture = ExtResource("2_p8c6r")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 shape = SubResource("CapsuleShape2D_y4cwl")
