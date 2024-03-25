@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bh00gsb3co1ch"]
+[gd_scene load_steps=12 format=3 uid="uid://bh00gsb3co1ch"]
 
+[ext_resource type="Texture2D" uid="uid://da6ocqoc88mad" path="res://imgs/background/parking/parking.png" id="1_juvo4"]
 [ext_resource type="Texture2D" uid="uid://bkmsuqo42d6kr" path="res://imgs/cars/car_car.png" id="2_n6kes"]
 [ext_resource type="Texture2D" uid="uid://4lpbyw3pl18q" path="res://imgs/buttons/toMenuButtons/toMenuButton.png" id="3_fmcx6"]
 [ext_resource type="Texture2D" uid="uid://c8al5jq4gdxxh" path="res://imgs/cars/car3.png" id="3_pfbtp"]
@@ -7,12 +8,11 @@
 
 [sub_resource type="GDScript" id="GDScript_cy1gq"]
 script/source = "extends Control
-
+@onready var animation_player = %AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -21,13 +21,17 @@ func _process(delta):
 
 func _on_touch_screen_button_pressed():
 	Global.car_img=load(\"res://imgs/cars/car3.png\")
-	get_tree().change_scene_to_file(\"res://scene/mainMenu/mainMenu.tscn\")
+	animation_player.play(\"red\")
+	await get_tree().create_timer(1.0).timeout
+	get_tree().change_scene_to_file(\"res://scene/main/main.tscn\")
 	pass # Replace with function body.
 
 
 func _on_touch_screen_button_2_pressed():
 	Global.car_img=load(\"res://imgs/cars/car_car.png\")
-	get_tree().change_scene_to_file(\"res://scene/mainMenu/mainMenu.tscn\")
+	animation_player.play(\"blue\")
+	await get_tree().create_timer(1.0).timeout
+	get_tree().change_scene_to_file(\"res://scene/main/main.tscn\")
 	pass # Replace with function body.
 
 
@@ -38,40 +42,142 @@ func _on_touch_screen_button_3_pressed():
 
 func _on_touch_screen_button_4_pressed():
 	Global.car_img=load(\"res://imgs/cars/car4.png\")
-	get_tree().change_scene_to_file(\"res://scene/mainMenu/mainMenu.tscn\")
+	animation_player.play(\"green\")
+	await get_tree().create_timer(1.0).timeout
+	get_tree().change_scene_to_file(\"res://scene/main/main.tscn\")
 	pass # Replace with function body.
 "
 
+[sub_resource type="GDScript" id="GDScript_miprn"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="Animation" id="Animation_yp18o"]
+resource_name = "blue"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(33, 47), Vector2(32, -29)]
+}
+
+[sub_resource type="Animation" id="Animation_panq3"]
+resource_name = "red"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Sprite2D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(131, 52), Vector2(130, -26)]
+}
+
+[sub_resource type="Animation" id="Animation_bs5om"]
+resource_name = "green"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Sprite2D3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(79, 52), Vector2(81, -28)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fdovi"]
+_data = {
+"blue": SubResource("Animation_yp18o"),
+"green": SubResource("Animation_bs5om"),
+"red": SubResource("Animation_panq3")
+}
+
 [node name="Garage" type="Node2D"]
+position = Vector2(0, 1)
+
+[node name="Parking" type="Sprite2D" parent="."]
+position = Vector2(80.5, 119.5)
+scale = Vector2(0.147222, 0.124935)
+texture = ExtResource("1_juvo4")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 154.0
+offset_bottom = 211.0
 script = SubResource("GDScript_cy1gq")
 
-[node name="TouchScreenButton2" type="TouchScreenButton" parent="Control"]
-position = Vector2(2, 4)
-scale = Vector2(0.514563, 0.580882)
-texture_normal = ExtResource("2_n6kes")
-
 [node name="TouchScreenButton3" type="TouchScreenButton" parent="Control"]
-position = Vector2(30, 170)
+position = Vector2(30, 166)
 scale = Vector2(0.0628048, 0.0654206)
 texture_normal = ExtResource("3_fmcx6")
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="Control"]
-position = Vector2(50, 16)
-scale = Vector2(0.54, 0.56)
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+position = Vector2(33, 47)
+scale = Vector2(0.589806, 0.613971)
+texture = ExtResource("2_n6kes")
+script = SubResource("GDScript_miprn")
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Control/Sprite2D"]
+light_mask = 0
+visibility_layer = 0
+position = Vector2(-25.4321, -34.2036)
+scale = Vector2(0.473283, 0.614989)
+texture_normal = ExtResource("2_n6kes")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Control"]
+position = Vector2(131, 52)
+scale = Vector2(0.54, 0.545)
+texture = ExtResource("3_pfbtp")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control/Sprite2D2"]
+light_mask = 0
+visibility_layer = 0
+position = Vector2(-20.3704, -42.2018)
+scale = Vector2(0.407407, 0.862386)
 texture_normal = ExtResource("3_pfbtp")
 
-[node name="TouchScreenButton4" type="TouchScreenButton" parent="Control"]
-position = Vector2(106, 16)
-scale = Vector2(0.58, 0.61)
+[node name="Sprite2D3" type="Sprite2D" parent="Control"]
+position = Vector2(79, 52)
+scale = Vector2(0.5875, 0.57)
+texture = ExtResource("4_jg2ry")
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="Control/Sprite2D3"]
+light_mask = 0
+visibility_layer = 0
+position = Vector2(-20.4255, -40.3509)
+scale = Vector2(0.447761, 0.84375)
 texture_normal = ExtResource("4_jg2ry")
 
-[connection signal="pressed" from="Control/TouchScreenButton2" to="Control" method="_on_touch_screen_button_2_pressed"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_fdovi")
+}
+
 [connection signal="pressed" from="Control/TouchScreenButton3" to="Control" method="_on_touch_screen_button_3_pressed"]
-[connection signal="pressed" from="Control/TouchScreenButton" to="Control" method="_on_touch_screen_button_pressed"]
-[connection signal="pressed" from="Control/TouchScreenButton4" to="Control" method="_on_touch_screen_button_4_pressed"]
+[connection signal="pressed" from="Control/Sprite2D/TouchScreenButton2" to="Control" method="_on_touch_screen_button_2_pressed"]
+[connection signal="pressed" from="Control/Sprite2D2/TouchScreenButton" to="Control" method="_on_touch_screen_button_pressed"]
+[connection signal="pressed" from="Control/Sprite2D3/TouchScreenButton4" to="Control" method="_on_touch_screen_button_4_pressed"]
