@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://buoepdxuniwqa"]
+[gd_scene load_steps=28 format=3 uid="uid://buoepdxuniwqa"]
 
 [ext_resource type="AudioStream" uid="uid://dr8douv8elwc7" path="res://music/MainManuMusic.mp3" id="1_m4uie"]
 [ext_resource type="Texture2D" uid="uid://bi3iyfftn310e" path="res://imgs/background/mainMenuBackground/frames/01.png" id="1_usb5h"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bjua1q8hwjqbv" path="res://imgs/buttons/quiteButtons/quiteButtonUnactive.png" id="17_qf30m"]
 [ext_resource type="Texture2D" uid="uid://c5ap01h7odkob" path="res://imgs/buttons/quiteButtons/quiteButtonActive.png" id="18_aal5o"]
 [ext_resource type="AudioStream" uid="uid://cucr5qsir3vrk" path="res://sounds/engineStartSound.mp3" id="19_5xn67"]
+[ext_resource type="Texture2D" uid="uid://dubch70m7aw5s" path="res://imgs/buttons/storeButtons/storeButton.png" id="20_ydxyt"]
 [ext_resource type="Texture2D" uid="uid://b1xjx41xdkyvk" path="res://imgs/gameLogoImgs/car.png" id="21_hd4ou"]
 [ext_resource type="PackedScene" uid="uid://c6omje6eu138a" path="res://scene/transition/scene_trasition.tscn" id="22_0b3mj"]
 [ext_resource type="Texture2D" uid="uid://ckhwblvyta0au" path="res://imgs/gameLogoImgs/logoText.png" id="23_4lsht"]
@@ -77,11 +78,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2h6gw"]
 size = Vector2(250, 128)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v60ga"]
+size = Vector2(110, 110)
+
 [node name="MainMenu" type="Node2D"]
 
 [node name="backgroundMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_m4uie")
-volume_db = -9.762
+volume_db = -9.0
 autoplay = true
 
 [node name="animatedBackground" type="AnimatedSprite2D" parent="."]
@@ -112,10 +116,18 @@ texture_normal = ExtResource("14_cbvv7")
 texture_pressed = ExtResource("15_nxamw")
 shape = SubResource("RectangleShape2D_2h6gw")
 
-[node name="engineSound" type="AudioStreamPlayer2D" parent="Controls"]
+[node name="storeTSB" type="TouchScreenButton" parent="Controls"]
+position = Vector2(113, 193)
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("20_ydxyt")
+texture_pressed = ExtResource("20_ydxyt")
+shape = SubResource("RectangleShape2D_v60ga")
+
+[node name="engineSound" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
 stream = ExtResource("19_5xn67")
 
-[node name="Logo" type="Sprite2D" parent="Controls"]
+[node name="Logo" type="Sprite2D" parent="."]
 texture_filter = 5
 texture_repeat = 1
 position = Vector2(76, 47)
@@ -131,4 +143,5 @@ texture = ExtResource("23_4lsht")
 
 [connection signal="pressed" from="Controls/quiteTSB" to="Controls" method="_on_quite_tsb_pressed"]
 [connection signal="pressed" from="Controls/playTSB" to="Controls" method="_on_play_tsb_pressed"]
+[connection signal="pressed" from="Controls/storeTSB" to="Controls" method="_on_store_tsb_pressed"]
 [connection signal="transitioned" from="SceneTrasition" to="Controls" method="_on_scene_trasition_transitioned"]
