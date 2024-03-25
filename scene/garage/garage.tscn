@@ -21,6 +21,7 @@ func _on_touch_screen_button_3_pressed():
 	get_tree().change_scene_to_file(\"res://scene/mainMenu/mainMenu.tscn\")
 
 func _on_scene_trasition_transitioned() -> void:
+	Global.point = 0
 	get_tree().change_scene_to_file(\"res://scene/main/main.tscn\")
 
 func _on_blue_car_tsb_pressed():

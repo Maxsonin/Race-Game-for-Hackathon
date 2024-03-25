@@ -10,15 +10,13 @@ func _on_play_tsb_pressed():
 	engine_sound.play()
 	await get_tree().create_timer(1.0).timeout
 	scene_trasition.transition()
-	
-	
+
 
 func _on_quite_tsb_pressed():
 	get_tree().quit()
 
 
 func _on_scene_trasition_transitioned() -> void:
-	Global.point = 0
 	if changing_to_store:
 		get_tree().change_scene_to_file("res://scene/garage/garage.tscn")
 	else:
