@@ -1,9 +1,31 @@
-[gd_scene format=3 uid="uid://cfeb1uffw13xb"]
+[gd_scene load_steps=3 format=3 uid="uid://cfeb1uffw13xb"]
+
+[ext_resource type="Script" path="res://obstacles/obstacle_base.gd" id="1_frsb7"]
+[ext_resource type="Texture2D" uid="uid://bqbsrwmjymkhs" path="res://imgs/cars/light1.png" id="2_5hap8"]
 
 [node name="ObstacleBase" type="Node2D"]
+script = ExtResource("1_frsb7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[node name="LeftLight" type="PointLight2D" parent="."]
+visible = false
+z_index = 1
+scale = Vector2(0.009, 0.009)
+energy = 5.0
+range_layer_min = -1
+range_layer_max = 1
+texture = ExtResource("2_5hap8")
+
+[node name="RightLight" type="PointLight2D" parent="."]
+visible = false
+z_index = 1
+scale = Vector2(0.009, 0.009)
+energy = 5.0
+range_layer_min = -1
+range_layer_max = 1
+texture = ExtResource("2_5hap8")

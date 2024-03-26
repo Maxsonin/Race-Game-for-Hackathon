@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://di42gx55ot2rl"]
+[gd_scene load_steps=6 format=3 uid="uid://di42gx55ot2rl"]
 
 [ext_resource type="PackedScene" uid="uid://cfeb1uffw13xb" path="res://obstacles/obstacle_base.tscn" id="1_t85h3"]
 [ext_resource type="Texture2D" uid="uid://h5hcnlrdvgmn" path="res://imgs/obstacles/obstacle_1.png" id="2_6uj0a"]
+[ext_resource type="Script" path="res://obstacles/sign_obstacle.gd" id="2_agqgr"]
 [ext_resource type="Script" path="res://obstacles/SignMoveComponent.gd" id="3_tv15r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8w6i"]
 size = Vector2(22, 3)
 
 [node name="sign_obstacle" instance=ExtResource("1_t85h3")]
+script = ExtResource("2_agqgr")
 
 [node name="Sprite2D" parent="." index="0"]
 scale = Vector2(0.03, 0.03)

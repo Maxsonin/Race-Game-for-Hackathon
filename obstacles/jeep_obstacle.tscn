@@ -20,3 +20,9 @@ shape = SubResource("CapsuleShape2D_4iuf2")
 [node name="MoveComponent" type="Node" parent="." index="2" node_paths=PackedStringArray("actor")]
 script = ExtResource("3_pdv3c")
 actor = NodePath("..")
+
+[node name="LeftLight" parent="." index="3"]
+position = Vector2(-7, 35)
+
+[node name="RightLight" parent="." index="4"]
+position = Vector2(8, 34)
