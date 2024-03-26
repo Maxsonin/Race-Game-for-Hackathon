@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bh00gsb3co1ch"]
+[gd_scene load_steps=22 format=3 uid="uid://bh00gsb3co1ch"]
 
 [ext_resource type="PackedScene" uid="uid://wdk54g4eoif" path="res://road/road.tscn" id="1_na4gb"]
 [ext_resource type="Texture2D" uid="uid://co1mwrtt4p7wk" path="res://imgs/buttons/toMenuButtons/to_menu_button.png" id="2_8msul"]
@@ -9,9 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://c6omje6eu138a" path="res://scene/transition/scene_trasition.tscn" id="6_mmdbj"]
 [ext_resource type="FontFile" uid="uid://chflfac1g7d6v" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="8_66reg"]
 [ext_resource type="AudioStream" uid="uid://colb6g5e20d58" path="res://music/garageMusic.mp3" id="9_nmxfb"]
+[ext_resource type="AudioStream" uid="uid://cufm870swg5q6" path="res://sounds/goSound.mp3" id="10_pum78"]
 
 [sub_resource type="GDScript" id="GDScript_cy1gq"]
 script/source = "extends Control
+
+@onready var go_sounds = %goSounds
 
 @onready var animation_player = %AnimationPlayer
 
@@ -30,24 +33,28 @@ func _on_blue_car_tsb_pressed():
 	Global.car_img = load(\"res://imgs/cars/blueCar.png\")
 	sound_in_out_controller.play(\"out\")
 	animation_player.play(\"blueChoosen\")
+	go_sounds.play()
 	scene_trasition.transition()
 
 func _on_aqua_car_tsb_pressed():
 	Global.car_img = load(\"res://imgs/cars/aquaCar.png\")
 	sound_in_out_controller.play(\"out\")
 	animation_player.play(\"aquaChoosen\")
+	go_sounds.play()
 	scene_trasition.transition()
 
 func _on_red_car_tsb_pressed():
 	Global.car_img = load(\"res://imgs/cars/redCar.png\")
 	sound_in_out_controller.play(\"out\")
 	animation_player.play(\"redChoosen\")
+	go_sounds.play()
 	scene_trasition.transition()
 
 func _on_white_car_tsb_pressed():
 	Global.car_img = load(\"res://imgs/cars/whiteCar.png\")
 	sound_in_out_controller.play(\"out\")
 	animation_player.play(\"whiteChoosen\")
+	go_sounds.play()
 	scene_trasition.transition()
 	
 "
@@ -298,6 +305,12 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_rdh5m")
 }
+
+[node name="goSounds" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("10_pum78")
+volume_db = 7.0
+pitch_scale = 1.5
 
 [connection signal="pressed" from="Control/blueCarTSB" to="Control" method="_on_blue_car_tsb_pressed"]
 [connection signal="pressed" from="Control/aquaCarTSB" to="Control" method="_on_aqua_car_tsb_pressed"]

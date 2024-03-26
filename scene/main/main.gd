@@ -1,5 +1,9 @@
 extends Node
 
+@onready var to_right_tsb = %ToRightTSB
+@onready var to_left_tsb = %ToLeftTSB
+
+
 @onready var sound_in_out_controller = %soundInOutController
 @onready var constant_engine_sound = %constantEngineSound
 @onready var night = $night
@@ -17,10 +21,12 @@ var move_speed: float = (VALUE_NEEDED_TO_CHANGE_ROAD / TIME_NEEDED_TO_CHANGE_ROA
 var targetPositions := [32, 64, 96, 128]
 var pos = 1
 
-
 func _ready():
 	Global.night = false
-
+	await get_tree().create_timer(1.5).timeout
+	to_right_tsb.visible = true
+	to_left_tsb.visible = true
+	
 func _process(delta):
 	if (int(Global.point)%1400>400 and int(Global.point)%1400<600):
 		night.modulate=Color(0,0,0,(float((int(Global.point)%200))/200))
