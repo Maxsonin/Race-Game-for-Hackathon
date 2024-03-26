@@ -44,9 +44,11 @@ func spawn_shi(obstacle: PackedScene, timer: Timer) -> void:
 	spawner.scene = obstacle
 	boo = spawn_points.pick_random()
 	while boo == prev_picked_by_random:
-		if boo == prev_prev_picked_by_random: continue
+		#if obstacle.resource_path.split("/")[3] == "sign_obstacle.tscn":
+			#pass
 		boo = spawn_points.pick_random()
+		if boo == prev_prev_picked_by_random: continue
 	prev_picked_by_random = boo
-	prev_prev_picked_by_random = 0
+	prev_prev_picked_by_random = prev_picked_by_random
 	spawner.spawn(Vector2(boo, -50))
 	timer.start()

@@ -22,7 +22,7 @@ PickupObstacle = ExtResource("7_jxm5u")
 script = ExtResource("1_relre")
 
 [node name="CarObstTimer" type="Timer" parent="."]
-wait_time = 9.0
+wait_time = 10.25
 one_shot = true
 autostart = true
 
@@ -42,11 +42,11 @@ one_shot = true
 autostart = true
 
 [node name="JeepObstTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 3.25
 one_shot = true
 autostart = true
 
 [node name="PickupObstTimer" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 4.5
 one_shot = true
 autostart = true
