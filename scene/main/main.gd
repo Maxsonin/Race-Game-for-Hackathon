@@ -14,6 +14,11 @@ var paused = false
 
 @onready var turn_anim = %turnAnim
 @onready var car = $Car
+@onready var street_light_1: PointLight2D = $StreetLight1
+@onready var street_light_2: PointLight2D = $StreetLight2
+
+
+
 const VALUE_NEEDED_TO_CHANGE_ROAD = 32
 const TIME_NEEDED_TO_CHANGE_ROAD = 1
 var target_position_x: float = 96
@@ -34,10 +39,14 @@ func _process(delta):
 		night.modulate=Color(0,0,0,(float((int(Global.point)%200))/200))
 		if (float((int(Global.point)%200))/200) > 0.5 and not Global.night:
 			Global.night = true
+			street_light_1.visible = true
+			street_light_2.visible = true
 	if (int(Global.point)%1400>1200 and int(Global.point)%1400<1400):
 		night.modulate=Color(0,0,0,1-(float((int(Global.point)%200))/200))
 		if (float((int(Global.point)%200))/200) < 0.5 and Global.night:
 			Global.night = false
+			street_light_1.visible = false
+			street_light_2.visible = false
 	if Input.is_action_just_pressed("Pause"):
 		pauseManu()
 
