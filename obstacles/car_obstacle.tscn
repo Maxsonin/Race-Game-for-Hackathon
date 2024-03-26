@@ -23,8 +23,8 @@ script = ExtResource("3_tt7yh")
 actor = NodePath("..")
 
 [node name="LeftLight" parent="." index="3"]
-position = Vector2(-8, 30)
+position = Vector2(-7, 30)
 scale = Vector2(0.00928626, 0.00927063)
 
 [node name="RightLight" parent="." index="4"]
-position = Vector2(7, 28)
+position = Vector2(7, 30)

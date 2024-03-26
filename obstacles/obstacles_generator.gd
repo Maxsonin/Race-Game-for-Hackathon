@@ -35,7 +35,7 @@ func _ready() -> void:
 
 func _process(delta):
 	if int(Global.point) > 0 and int(Global.point) <= 2100 and int(Global.point) % 300 == 0:
-		car_obst_timer.wait_time /= 1.35
+		taxi_obst_timer.wait_time /= 1.35
 		Global.point+=1
 		sign_obst_timer.wait_time /= 1.35
 

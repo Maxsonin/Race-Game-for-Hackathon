@@ -25,4 +25,4 @@ actor = NodePath("..")
 position = Vector2(-7, 35)
 
 [node name="RightLight" parent="." index="4"]
-position = Vector2(8, 34)
+position = Vector2(7, 35)

@@ -22,7 +22,7 @@ script = ExtResource("3_djmh2")
 actor = NodePath("..")
 
 [node name="LeftLight" parent="." index="3"]
-position = Vector2(7, 33)
+position = Vector2(7, 34)
 
 [node name="RightLight" parent="." index="4"]
-position = Vector2(-6, 34)
+position = Vector2(-7, 34)
