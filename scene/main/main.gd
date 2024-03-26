@@ -36,14 +36,14 @@ func _ready():
 	
 func _process(delta):
 	if (int(Global.point)%1400>400 and int(Global.point)%1400<600):
-		night.modulate=Color(0,0,0,(float((int(Global.point)%200))/200))
-		if (float((int(Global.point)%200))/200) > 0.5 and not Global.night:
+		night.modulate=Color(0,0,0,(float((int(Global.point)%200))/300))
+		if (float((int(Global.point)%200))/200) > 0.7 and not Global.night:
 			Global.night = true
 			street_light_1.visible = true
 			street_light_2.visible = true
 	if (int(Global.point)%1400>1200 and int(Global.point)%1400<1400):
-		night.modulate=Color(0,0,0,1-(float((int(Global.point)%200))/200))
-		if (float((int(Global.point)%200))/200) < 0.5 and Global.night:
+		night.modulate=Color(0,0,0,0.66-(float((int(Global.point)%200))/300))
+		if (float((int(Global.point)%200))/200) < 0.7 and Global.night:
 			Global.night = false
 			street_light_1.visible = false
 			street_light_2.visible = false
