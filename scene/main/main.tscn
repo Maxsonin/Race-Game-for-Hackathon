@@ -166,7 +166,6 @@ action = "MoveLeft"
 visible = false
 
 [node name="SceneTrasition" parent="." instance=ExtResource("9_itvyu")]
-visible = false
 
 [node name="constantEngineSound" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true

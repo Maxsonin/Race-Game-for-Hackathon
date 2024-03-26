@@ -72,10 +72,11 @@ func _on_car_car_got_hit_fr() -> void:
 	sound_in_out_controller.play("out")
 	await get_tree().create_timer(1).timeout
 	scene_trasition.transition()
-	#get_tree().change_scene_to_file("res://scene/deadScreen/dead_scene.tscn")
+
 
 func _on_scene_trasition_transitioned() -> void:
 	get_tree().change_scene_to_file("res://scene/deadScreen/dead_scene.tscn")
+
 
 func setPosition():
 	if pos == -1:
