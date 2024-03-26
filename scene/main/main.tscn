@@ -234,6 +234,7 @@ libraries = {
 }
 
 [connection signal="car_got_hit_fr" from="Car" to="." method="_on_car_car_got_hit_fr"]
+[connection signal="animation_finished" from="turnAnim" to="." method="_on_turn_anim_animation_finished"]
 [connection signal="pressed" from="TSBControls/ToRightTSB" to="TSBControls" method="_on_to_right_tsb_pressed"]
 [connection signal="pressed" from="TSBControls/ToLeftTSB" to="TSBControls" method="_on_to_left_tsb_pressed"]
 [connection signal="transitioned" from="SceneTrasition" to="." method="_on_scene_trasition_transitioned"]

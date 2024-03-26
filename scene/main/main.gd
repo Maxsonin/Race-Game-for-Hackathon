@@ -20,6 +20,8 @@ var target_position_x: float = 96
 var move_speed: float = (VALUE_NEEDED_TO_CHANGE_ROAD / TIME_NEEDED_TO_CHANGE_ROAD)
 var targetPositions := [32, 64, 96, 128]
 var pos = 1
+var start_played = false
+
 
 func _ready():
 	Global.night = false
@@ -30,24 +32,22 @@ func _ready():
 func _process(delta):
 	if (int(Global.point)%1400>400 and int(Global.point)%1400<600):
 		night.modulate=Color(0,0,0,(float((int(Global.point)%200))/200))
-		print("night")
 		if (float((int(Global.point)%200))/200) > 0.5 and not Global.night:
 			Global.night = true
 	if (int(Global.point)%1400>1200 and int(Global.point)%1400<1400):
 		night.modulate=Color(0,0,0,1-(float((int(Global.point)%200))/200))
-		print("day")
 		if (float((int(Global.point)%200))/200) < 0.5 and Global.night:
 			Global.night = false
 	if Input.is_action_just_pressed("Pause"):
 		pauseManu()
 
 	elif Input.is_action_just_pressed("MoveRight") and pos < 2:
-		if not car.can_move: return
+		if not car.can_move or not start_played: return
 		turn_anim.play("turn_right")
 		pos += 1
 
 	elif Input.is_action_just_pressed("MoveLeft") and pos > -1:
-		if not car.can_move: return
+		if not car.can_move or not start_played: return
 		turn_anim.play("turn_left")
 		pos -= 1
 
@@ -86,3 +86,8 @@ func setPosition():
 		target_position_x = targetPositions[2]
 	elif pos == 2:
 		target_position_x = targetPositions[3]
+
+
+func _on_turn_anim_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "start":
+		start_played = true
