@@ -48,5 +48,5 @@ func spawn_shi(obstacle: PackedScene, timer: Timer) -> void:
 		boo = spawn_points.pick_random()
 	prev_picked_by_random = boo
 	prev_prev_picked_by_random = 0
-	spawner.spawn(Vector2(boo, -40))
+	spawner.spawn(Vector2(boo, -50))
 	timer.start()

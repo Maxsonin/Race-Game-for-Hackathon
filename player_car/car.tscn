@@ -50,25 +50,23 @@ stream = ExtResource("5_xuwir")
 volume_db = -21.989
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-visible = false
 z_index = 1
 z_as_relative = false
-position = Vector2(9, -56)
+position = Vector2(8, -48)
 rotation = -3.14159
-scale = Vector2(0.0168467, 0.0251341)
-energy = 10.0
+scale = Vector2(0.013, 0.02)
+energy = 7.0
 range_layer_min = -1
 range_layer_max = 1
 texture = ExtResource("6_331ef")
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
-visible = false
 z_index = 1
 z_as_relative = false
-position = Vector2(-9, -55)
+position = Vector2(-7, -48)
 rotation = -3.14159
-scale = Vector2(0.0168467, 0.0251341)
-energy = 10.0
+scale = Vector2(0.013, 0.02)
+energy = 7.0
 range_layer_min = -1
 range_layer_max = 1
 texture = ExtResource("6_331ef")
