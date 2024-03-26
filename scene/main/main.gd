@@ -79,6 +79,7 @@ func pauseManu():
 func _on_car_car_got_hit_fr() -> void:
 	constant_engine_sound.stop()
 	sound_in_out_controller.play("out")
+	turn_anim.play("crash")
 	await get_tree().create_timer(1).timeout
 	scene_trasition.transition()
 

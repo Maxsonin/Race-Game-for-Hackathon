@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://psf0b7wkagio"]
+[gd_scene load_steps=29 format=3 uid="uid://psf0b7wkagio"]
 
 [ext_resource type="PackedScene" uid="uid://csg7h2gw70il0" path="res://player_car/car.tscn" id="1_4gxa1"]
 [ext_resource type="Script" path="res://scene/main/main.gd" id="1_eq3eq"]
@@ -75,9 +75,26 @@ tracks/0/keys = {
 "values": [0.0, 0.261799, 0.0]
 }
 
+[sub_resource type="Animation" id="Animation_q17gs"]
+resource_name = "crash"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Car:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.308923]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fmmig"]
 _data = {
 "RESET": SubResource("Animation_5ifg0"),
+"crash": SubResource("Animation_q17gs"),
 "start": SubResource("Animation_bpoms"),
 "turn_left": SubResource("Animation_sisl5"),
 "turn_right": SubResource("Animation_jlq0i")
@@ -203,7 +220,6 @@ speed_scale = 2.0
 layer = -1
 
 [node name="TSBControls" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
